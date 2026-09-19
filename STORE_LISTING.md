@@ -70,7 +70,13 @@ Stop switching tabs to copy-paste from external generator websites. Just select 
 • 100% Local: All conversions happen completely offline inside your browser. No data is collected, stored, or sent over the internet.
 • Fully compliant with LinkedIn's Content Security Policy.
 
-Make your LinkedIn content more engaging, readable, and professional today!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📄 DISCLAIMER & ACKNOWLEDGMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+This extension is an independent open-source project and is NOT affiliated with, endorsed, sponsored, or otherwise related to LinkedIn Corporation or its affiliates. LinkedIn is a registered trademark of LinkedIn Corporation.
+
+Formatly for LinkedIn is open source under the MIT License.
+GitHub Repository: https://github.com/tylerhuang/formatly-for-linkedin
 ```
 
 ---
@@ -103,9 +109,9 @@ Make your LinkedIn content more engaging, readable, and professional today!
 | **商店图标 (Store Icon)** | 128×128 PNG | ✅ 已就绪 | `icons/icon-128.png` |
 | **高清图标母版** | 512×512 PNG | ✅ 已就绪 | `icons/icon-512.png` |
 | **矢量源文件** | SVG | ✅ 已就绪 | `icons/icon.svg` |
-| **截图 1 (功能演示)** | 1280×800 PNG | ✅ 已有素材 | 可使用闭环实机截图 `real-mouse-drag-popup.png` |
-| **截图 2 (加粗效果)** | 1280×800 PNG | ✅ 已有素材 | 可使用闭环实机截图 `real-mouse-drag-bold.png` |
-| **推广横幅 (Small Promo)** | 440×280 PNG | ⬜ 可选 | 商店首页推荐位需要 |
+| **截图 1 (功能演示)** | 1280×800 PNG | ✅ 已就绪 | `store-assets/screenshot-1-toolbar.png` |
+| **截图 2 (排版效果)** | 1280×800 PNG | ✅ 已就绪 | `store-assets/screenshot-2-styles.png` |
+| **推广横幅 (Small Promo)** | 440×280 PNG | ✅ 已就绪 | `store-assets/promo-tile-440x280.png` |
 
 ---
 

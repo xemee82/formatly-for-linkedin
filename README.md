@@ -1,6 +1,6 @@
-# LinkedIn Inline Formatter (领英划词格式化扩展)
+# Formatly for LinkedIn: Bold, Italic & Font Styles
 
-一款专为 LinkedIn 设计的轻量级浏览器扩展。在 LinkedIn 发帖框、评论区或文章编辑器中划选任意文字，即可瞬间弹出浮动工具栏，一键将文字转换为加粗、斜体等多种 Unicode 艺术字体，或一键还原为普通文本。
+一款专为 LinkedIn 设计的轻量级、纯本地、零敏感权限浏览器扩展（Manifest V3）。在 LinkedIn 发帖框、评论区或文章编辑器中划选任意文字，即可瞬间弹出浮动工具栏，一键将文字转换为加粗、斜体等多种 Unicode 艺术字体，或一键还原为普通文本。
 
 ---
 
@@ -18,7 +18,7 @@
   - **CSP 免疫**：纯 DOM API 构建，彻底规避 LinkedIn 生产环境强制开启的 `Trusted Types` 安全策略阻拦。
   - **Shadow DOM 穿透**：无缝支持 LinkedIn 2026 新版挂载在 `#interop-outlet` Shadow DOM 内部的发帖弹窗与评论框。
   - **Undo/Redo 栈同步**：优先调用 `document.execCommand('insertText')`，完美兼容 Quill.js 编辑器的撤销重做栈与字数统计。
-- **零权限、零遥测**：不申请 `host_permissions`，不读取用户隐私，无需联网权限，纯本地离线瞬时处理。
+- **零权限、零遥测**：不申请任何额外权限（无 `host_permissions`、无 `storage`），纯本地离线瞬时处理。
 
 ---
 
@@ -58,8 +58,6 @@
 ```text
 linkedin-text-formatter/
 ├── manifest.json              # Manifest V3 扩展配置文件（零敏感权限）
-├── background/
-│   └── background.js          # Service Worker 后台保活与状态管理
 ├── content/
 │   ├── unicode-map.js         # Unicode 字符映射表与正反向双向转换核心
 │   ├── unicode-map.test.js    # 映射表自动化单元测试 (20/20 验证用例)
@@ -69,10 +67,29 @@ linkedin-text-formatter/
 │   ├── content.css            # 宿主层基础隔离样式
 │   └── content.js             # Content Script 主入口胶水层
 ├── popup/
-│   ├── popup.html             # 扩展状态弹出页 UI
-│   └── popup.js               # 弹出页控制逻辑
-└── icons/                     # 16x16, 48x48, 128x128 扩展高清图标
+│   ├── popup.html             # 扩展状态弹出页与创作者卡片
+│   └── popup.js               # 安全打开外部链接
+├── icons/                     # 16x16, 32x32, 48x48, 128x128 扩展高清图标
+├── store-assets/              # 商店提交用 1280x800 截图与 440x280 推广小磁贴
+├── CHROMEWEBSTORE.md          # Chrome Web Store & Edge Add-ons 提交全套物料
+├── STORE_LISTING.md           # 商店文案资料包
+├── PRIVACY_POLICY.md          # 隐私权政策 (公开托管)
+└── HANDOVER.md                # 完整技术架构交接全景文档
 ```
+
+---
+
+## 开源渊源与致敬 (Acknowledgments)
+
+本项目在初期调研与技术探索阶段，参考了 GitHub 开源项目 [viclafouch/beautify-post](https://github.com/viclafouch/beautify-post) (MIT License，作者：Victor de la Fouchardiere)。在此对其早期的交互范式探索表示感谢！
+
+针对 2026 年现代 LinkedIn 生产环境，本项目进行了 100% 的原生纯重构（摒弃 React/Webpack，包体积缩减 95% 至 ~35KB；攻克了 `#interop-outlet` Shadow DOM 穿透、Trusted Types CSP 规避以及 Quill 撤销栈同步）。详见 [HANDOVER.md](file:///Users/tylerh/Documents/Antigravity/linkedin-text-formatter/HANDOVER.md)。
+
+---
+
+## 免责声明 (Disclaimer)
+
+Formatly for LinkedIn 是一款独立的开源浏览器扩展，与 LinkedIn 官方（LinkedIn Corporation）及其关联方没有任何隶属、认可、赞助或合作关系。LinkedIn 是 LinkedIn Corporation 的注册商标。
 
 ---
 
@@ -80,9 +97,10 @@ linkedin-text-formatter/
 
 **Q：加载扩展后在发帖框划选没有弹出工具栏？**  
 A：
-1. 确保扩展已成功启用（在 `edge://extensions` 中开关为开启状态）；
+1. 确保扩展已成功启用（在 `edge://extensions` 或 `chrome://extensions` 中开关为开启状态）；
 2. 扩展更新或重载后，**必须按 `Cmd + R` (Mac) 或 `F5` (Windows) 刷新一次 LinkedIn 页面**，以便浏览器将最新 Content Script 注入页面 DOM；
 3. 确保选中的文字不是纯空格或空字符。
 
 **Q：格式化后的文字发出去别人能看见吗？**  
 A：完全可以。Unicode 数学字母符号属于全平台统一标准编码，任何人的手机、电脑甚至邮件通知都能原生显示，不需要对方安装任何插件。
+

@@ -1,20 +1,28 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Inline Formatter",
+  "name": "Formatly for LinkedIn: Bold, Italic & Font Styles",
   "version": "1.0.0",
-  "description": "Select text in LinkedIn editor, format instantly with bold, italic, and more Unicode styles.",
+  "description": "Format LinkedIn posts with bold, italic, and stylish fonts instantly. Select text in any post or comment to format.",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
   },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
   "content_scripts": [
     {
       "matches": [
         "https://www.linkedin.com/*",
-        "https://*.linkedin.com/*",
-        "http://localhost:*/*"
+        "https://*.linkedin.com/*"
       ],
       "js": [
         "content/unicode-map.js",
