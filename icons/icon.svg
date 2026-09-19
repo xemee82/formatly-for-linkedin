@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- 背景渐变：从领英蓝渐变至深邃科技靛蓝 -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A66C2"/>
+      <stop offset="50%" stop-color="#004E98"/>
+      <stop offset="100%" stop-color="#06284F"/>
+    </linearGradient>
+
+    <!-- 顶层高光柔和反射 -->
+    <linearGradient id="highlightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- 字母 B 的金属质感渐变 -->
+    <linearGradient id="letterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#EDF5FF"/>
+      <stop offset="100%" stop-color="#CFE5FF"/>
+    </linearGradient>
+
+    <!-- 强调斜体元素与星芒的亮金/极光青色渐变 -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38E1FF"/>
+      <stop offset="100%" stop-color="#00A0DC"/>
+    </linearGradient>
+
+    <!-- 柔和投影滤镜 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#001833" flood-opacity="0.45"/>
+    </filter>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#38E1FF" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- 1. 圆角矩形背景 (Squircle) -->
+  <rect x="24" y="24" width="464" height="464" rx="108" fill="url(#bgGrad)"/>
+
+  <!-- 2. 顶部微光倒角 -->
+  <rect x="24" y="24" width="464" height="232" rx="108" fill="url(#highlightGrad)"/>
+
+  <!-- 3. 背景排版装饰网格线 (微透明) -->
+  <line x1="80" y1="130" x2="432" y2="130" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="3" stroke-dasharray="8 8"/>
+  <line x1="80" y1="382" x2="432" y2="382" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="3" stroke-dasharray="8 8"/>
+
+  <!-- 4. 核心排版徽标：加粗衬线大写 B -->
+  <g filter="url(#shadow)">
+    <!-- 字母 B 主体路径 -->
+    <path d="M 148 130 
+             L 278 130 
+             C 328 130, 362 154, 362 196 
+             C 362 226, 342 248, 312 256 
+             C 350 264, 376 292, 376 334 
+             C 376 384, 334 406, 282 406 
+             L 148 406 
+             Z
+             M 218 184 
+             L 218 242 
+             L 270 242 
+             C 292 242, 306 232, 306 213 
+             C 306 194, 292 184, 270 184 
+             Z
+             M 218 294 
+             L 218 352 
+             L 276 352 
+             C 300 352, 318 340, 318 323 
+             C 318 306, 300 294, 276 294 
+             Z" 
+          fill="url(#letterGrad)"/>
+
+    <!-- 底部衬线细节修饰 (Serif brackets) -->
+    <rect x="132" y="130" width="32" height="12" rx="3" fill="url(#letterGrad)"/>
+    <rect x="132" y="394" width="32" height="12" rx="3" fill="url(#letterGrad)"/>
+  </g>
+
+  <!-- 5. 动态斜体装饰笔触 (Italic dynamic pen slash) -->
+  <g filter="url(#glow)">
+    <!-- 穿插在 B 前方或右侧的优雅倾斜笔触 -->
+    <path d="M 378 116 L 398 96 C 402 92, 408 92, 412 96 L 420 104 C 424 108, 424 114, 420 118 L 400 138 Z" fill="url(#accentGrad)"/>
+    
+    <!-- 灵动格式化星芒 (✦ Formatting Magic Sparkle) -->
+    <path d="M 404 180 
+             Q 404 204, 428 204 
+             Q 404 204, 404 228 
+             Q 404 204, 380 204 
+             Q 404 204, 404 180 Z" 
+          fill="url(#accentGrad)"/>
+  </g>
+</svg>

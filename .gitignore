@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+node_modules/
+*__MACOSX*
+.idea/
+.vscode/
+*.swp
+package-lock.json

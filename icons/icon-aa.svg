@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- 1. 深邃暗夜背景渐变 -->
+    <linearGradient id="bgDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C18"/>
+      <stop offset="50%" stop-color="#0E1626"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+
+    <!-- 2. 霓虹光环边框渐变 (Electric Cyan to Royal Indigo) -->
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8"/>
+      <stop offset="45%" stop-color="#3B82F6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- 3. 背景核心微光 (Radial Ambient Glow) -->
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#0A66C2" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#00F0FF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- 4. 大写 A 金属质感白银渐变 (Serif Bold) -->
+    <linearGradient id="metalA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- 5. 小写 a 极光青至深海蓝高能渐变 (Dynamic Italic) -->
+    <linearGradient id="neonItalic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="50%" stop-color="#0099FF"/>
+      <stop offset="100%" stop-color="#7000FF"/>
+    </linearGradient>
+
+    <!-- 6. 顶峰星芒极光白 -->
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+
+    <!-- 滤镜：深沉硬朗阴影 -->
+    <filter id="heavyShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity="0.85"/>
+    </filter>
+
+    <!-- 滤镜：霓虹泛光 -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#00F0FF" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <!-- 1. 圆角外框背景 (Squircle) -->
+  <rect x="20" y="20" width="472" height="472" rx="112" fill="url(#bgDark)"/>
+
+  <!-- 2. 背景霓虹光晕 -->
+  <rect x="20" y="20" width="472" height="472" rx="112" fill="url(#ambientGlow)"/>
+
+  <!-- 3. 精致边缘流光勾边 (1.5px Rim Light) -->
+  <rect x="20.5" y="20.5" width="471" height="471" rx="111.5" fill="none" stroke="url(#rimGrad)" stroke-width="3"/>
+
+  <!-- 4. 几何排版参考十字辅助线 (极简暗调) -->
+  <line x1="80" y1="256" x2="432" y2="256" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="2" stroke-dasharray="6 6"/>
+  <line x1="240" y1="90" x2="240" y2="422" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <!-- 5. 核心图腾：大写 A (重磅衬线加粗 Bold) -->
+  <g filter="url(#heavyShadow)">
+    <!-- 大写 A 几何主形：顶尖、左粗腿、右衬线支柱与横梁 -->
+    <path d="M 204 110 
+             L 246 110 
+             L 326 390 
+             L 266 390 
+             L 248 322 
+             L 164 322 
+             L 146 390 
+             L 86 390 
+             Z 
+             M 206 182 
+             L 178 280 
+             L 234 280 
+             Z" 
+          fill="url(#metalA)"/>
+
+    <!-- A 的顶级衬线细节切角与底座修饰 -->
+    <rect x="74" y="384" width="28" height="6" rx="2" fill="url(#metalA)"/>
+    <rect x="314" y="384" width="28" height="6" rx="2" fill="url(#metalA)"/>
+    <polygon points="196,110 254,110 248,118 202,118" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 6. 核心图腾：小写 a (高能斜体 Italic + 穿透动感) -->
+  <g filter="url(#neonGlow)" transform="skewX(-11) translate(46, 0)">
+    <!-- 小写 a 现代流线形体 -->
+    <path d="M 340 216 
+             C 300 216, 274 240, 274 278 
+             C 274 300, 286 318, 308 324 
+             L 340 334 
+             C 356 338, 364 346, 364 358 
+             C 364 374, 348 384, 328 384 
+             C 304 384, 290 372, 288 356 
+             L 244 356 
+             C 246 388, 276 414, 328 414 
+             C 378 414, 412 388, 412 348 
+             L 412 284 
+             C 412 240, 384 216, 340 216 
+             Z 
+             M 364 276 
+             L 364 304 
+             L 340 298 
+             C 328 294, 320 286, 320 274 
+             C 320 262, 330 252, 344 252 
+             C 356 252, 364 260, 364 276 
+             Z" 
+          fill="url(#neonItalic)"/>
+  </g>
+
+  <!-- 7. 格式化魔法闪光 (✦ Top Sparkle) -->
+  <g filter="url(#neonGlow)">
+    <path d="M 370 114 
+             Q 370 144, 400 144 
+             Q 370 144, 370 174 
+             Q 370 144, 340 144 
+             Q 370 144, 370 114 Z" 
+          fill="url(#sparkGrad)"/>
+    <circle cx="430" cy="180" r="5" fill="#00F0FF"/>
+  </g>
+</svg>

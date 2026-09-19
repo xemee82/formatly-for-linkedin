@@ -1,0 +1,10 @@
+/* 宿主元素样式 — 所有工具栏样式都在 Shadow DOM 内部 */
+#lif-toolbar-host {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  pointer-events: none;
+}
+
+#lif-toolbar-host.lif-visible {
+  pointer-events: auto !important;
+}
