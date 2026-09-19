@@ -1,7 +1,7 @@
 # Formatly for LinkedIn: Bold, Italic & Font Styles
 
 <p align="center">
-  <img src="icons/icon-128.png" alt="Formatly Logo" width="96" height="96">
+  <img src="icons/formatly-aa-icon.png" alt="Formatly Aa Logo" width="104" height="104">
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 Whenever you select text inside LinkedIn's post composer, comment field, or article editor, a polished floating toolbar appears right above your selection. With a single click, convert plain text into bold, italic, bold-italic, or sans-serif bold typography—or revert back to plain text anytime.
 
 <p align="center">
-  <img src="store-assets/screenshot-1-toolbar.png" alt="Formatly Floating Toolbar in LinkedIn" width="800">
+  <img src="store-assets/screenshot-1.png" alt="Formatly Floating Toolbar in LinkedIn" width="800">
 </p>
 
 ---
@@ -37,7 +37,7 @@ Whenever you select text inside LinkedIn's post composer, comment field, or arti
   - **B (Serif Bold)**: `𝐇𝐞𝐥𝐥𝐨 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧`
   - **I (Serif Italic)**: `𝐻𝑒𝑙𝑙𝑜 𝐿𝑖𝑛𝑘𝑒𝑑𝐼𝑛`
   - **B (Bold Italic)**: `𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝒏𝒌𝒆𝒅𝑰𝒏`
-  - **𝗕 (Sans-Serif Bold)**: `𝗛𝗲𝗹𝗹𝗼 𝗟𝗶𝗻𝗸𝒆𝗱𝗜𝗻`
+  - **𝗕 (Sans-Serif Bold)**: `𝗛𝗲𝗹𝗹𝗼 𝗟𝗶𝐧𝐤𝗲𝗱𝗜𝗻`
   - **Aa (One-Click Revert)**: Restores any formatted Unicode back to clean plain text.
 - 🌐 **Universal Cross-Platform Rendering**: Formatted with standard mathematical Unicode characters. Renders natively on iOS, Android, desktop browsers, and email notifications without readers needing any plugin.
 - 🔄 **Native Undo/Redo Synchronized**: Fully integrated with LinkedIn's internal Quill.js editor via native input transactions. Press `Cmd+Z` / `Ctrl+Z` to undo seamlessly.
@@ -45,7 +45,7 @@ Whenever you select text inside LinkedIn's post composer, comment field, or arti
 - ⚡ **Ultra Lightweight (~35KB)**: Built with pure Vanilla ES6+ without React, Webpack, or external dependencies.
 
 <p align="center">
-  <img src="store-assets/screenshot-2-styles.png" alt="Formatly Styles Preview" width="800">
+  <img src="store-assets/screenshot-2.png" alt="Formatly Styles Preview" width="800">
 </p>
 
 ---
