@@ -1,106 +1,143 @@
 # Formatly for LinkedIn: Bold, Italic & Font Styles
 
-一款专为 LinkedIn 设计的轻量级、纯本地、零敏感权限浏览器扩展（Manifest V3）。在 LinkedIn 发帖框、评论区或文章编辑器中划选任意文字，即可瞬间弹出浮动工具栏，一键将文字转换为加粗、斜体等多种 Unicode 艺术字体，或一键还原为普通文本。
+<p align="center">
+  <img src="icons/icon-128.png" alt="Formatly Logo" width="96" height="96">
+</p>
+
+<p align="center">
+  <strong>The sleek, instant, zero-permission inline formatting toolbar for LinkedIn creators, founders, and professionals.</strong>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/Manifest-V3-success.svg" alt="Manifest V3">
+  <img src="https://img.shields.io/badge/Permissions-Zero-brightgreen.svg" alt="Zero Permissions">
+  <img src="https://img.shields.io/badge/Dependencies-Zero%20(Vanilla%20ES6%2B)-orange.svg" alt="Zero Dependencies">
+  <img src="https://img.shields.io/badge/Location-Singapore%20🇸🇬-red.svg" alt="Singapore">
+</p>
 
 ---
 
-## 核心特性
+## 🌟 Overview
 
-- **划选即弹 (Instant Floating Toolbar)**：在任何 LinkedIn 可编辑区域选中文本，工具栏自动在文字上方精准浮动，带箭头指示。
-- **5 款精选核心样式**：
-  1. **B**：衬线粗体（Bold Serif，如 𝐇𝐞𝐥𝐥𝐨）
-  2. **I**：衬线斜体（Italic Serif，如 𝐻𝑒𝑙𝑙𝑜）
-  3. **B**：粗斜体（Bold Italic，如 𝑯𝒆𝒍𝒍𝒐）
-  4. **𝗕**：无衬线粗体（Sans-Serif Bold，如 𝗛𝗲𝗹𝗹𝗼）
-  5. **Aa**：快速还原（Revert，一键恢复为普通无格式英文字符）
-- **真·全平台兼容**：采用纯 Unicode 字符集映射，而非 HTML 富文本标签。无论读者使用的是 LinkedIn 网页端、iOS/Android App、桌面端还是邮件预览，格式均能原样呈现，绝不丢失。
-- **LinkedIn 深度安全适配**：
-  - **CSP 免疫**：纯 DOM API 构建，彻底规避 LinkedIn 生产环境强制开启的 `Trusted Types` 安全策略阻拦。
-  - **Shadow DOM 穿透**：无缝支持 LinkedIn 2026 新版挂载在 `#interop-outlet` Shadow DOM 内部的发帖弹窗与评论框。
-  - **Undo/Redo 栈同步**：优先调用 `document.execCommand('insertText')`，完美兼容 Quill.js 编辑器的撤销重做栈与字数统计。
-- **零权限、零遥测**：不申请任何额外权限（无 `host_permissions`、无 `storage`），纯本地离线瞬时处理。
+**Formatly for LinkedIn** is a lightweight, lightning-fast browser extension built for modern professionals. It eliminates the friction of switching browser tabs to copy-paste formatted text from external generator websites like YayText.
+
+Whenever you select text inside LinkedIn's post composer, comment field, or article editor, a polished floating toolbar appears right above your selection. With a single click, convert plain text into bold, italic, bold-italic, or sans-serif bold typography—or revert back to plain text anytime.
+
+<p align="center">
+  <img src="store-assets/screenshot-1-toolbar.png" alt="Formatly Floating Toolbar in LinkedIn" width="800">
+</p>
 
 ---
 
-## 安装说明
+## ✨ Key Features
 
-### 1. Microsoft Edge 安装步骤
-1. 打开 Edge 浏览器，在地址栏输入 `edge://extensions` 并回车；
-2. 在左侧菜单底部，打开 **“开发人员模式” (Developer mode)** 开关；
-3. 点击顶部出现的 **“加载解压缩的扩展” (Load unpacked)** 按钮；
-4. 在弹出的文件选择窗口中，选中本项目的根目录（`linkedin-text-formatter` 文件夹），点击选择；
-5. 打开或刷新任意 LinkedIn 网页（如 `https://www.linkedin.com/feed/`），即可开始使用。
+- 🎯 **Instant Floating Toolbar**: Appears dynamically above your highlighted text with zero delay.
+- 🔤 **5 Essential Typography Styles**:
+  - **B (Serif Bold)**: `𝐇𝐞𝐥𝐥𝐨 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧`
+  - **I (Serif Italic)**: `𝐻𝑒𝑙𝑙𝑜 𝐿𝑖𝑛𝑘𝑒𝑑𝐼𝑛`
+  - **B (Bold Italic)**: `𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝒏𝒌𝒆𝒅𝑰𝒏`
+  - **𝗕 (Sans-Serif Bold)**: `𝗛𝗲𝗹𝗹𝗼 𝗟𝗶𝗻𝗸𝒆𝗱𝗜𝗻`
+  - **Aa (One-Click Revert)**: Restores any formatted Unicode back to clean plain text.
+- 🌐 **Universal Cross-Platform Rendering**: Formatted with standard mathematical Unicode characters. Renders natively on iOS, Android, desktop browsers, and email notifications without readers needing any plugin.
+- 🔄 **Native Undo/Redo Synchronized**: Fully integrated with LinkedIn's internal Quill.js editor via native input transactions. Press `Cmd+Z` / `Ctrl+Z` to undo seamlessly.
+- 🛡️ **Zero Sensitive Permissions**: Runs 100% locally and offline. Requires NO external host permissions, NO storage permissions, and collects NO telemetry or personal data.
+- ⚡ **Ultra Lightweight (~35KB)**: Built with pure Vanilla ES6+ without React, Webpack, or external dependencies.
 
-### 2. Google Chrome 安装步骤
-1. 打开 Chrome 浏览器，在地址栏输入 `chrome://extensions` 并回车；
-2. 开启右上角的 **“开发者模式” (Developer mode)** 开关；
-3. 点击左上角的 **“加载已解压的扩展程序” (Load unpacked)** 按钮；
-4. 选中 `linkedin-text-formatter` 文件夹；
-5. 打开或刷新 LinkedIn 网页即可使用。
-
----
-
-## 使用指南
-
-1. **发帖/评论**：
-   在 LinkedIn 首页点击“Start a post (发起帖子)”或定位到任意帖子的评论输入框。
-2. **输入与划选**：
-   键入您的文本内容，用鼠标拖拽划选您想要强调的关键词或段落。
-3. **一键格式化**：
-   黑色悬浮工具栏会自动在选区上方弹出。点击 **B**、**I**、粗斜体或无衬线粗体，文字立即变身。
-4. **一键撤销/还原**：
-   如果想恢复纯文本，只需划选已加粗的文字，点击工具栏最右侧的 **Aa** 按钮，或直接使用系统快捷键 `Cmd + Z` / `Ctrl + Z`。
+<p align="center">
+  <img src="store-assets/screenshot-2-styles.png" alt="Formatly Styles Preview" width="800">
+</p>
 
 ---
 
-## 项目目录结构
+## 🚀 Quick Installation
 
-```text
-linkedin-text-formatter/
-├── manifest.json              # Manifest V3 扩展配置文件（零敏感权限）
-├── content/
-│   ├── unicode-map.js         # Unicode 字符映射表与正反向双向转换核心
-│   ├── unicode-map.test.js    # 映射表自动化单元测试 (20/20 验证用例)
-│   ├── selection.js           # 选区探测器 (深度支持 Shadow DOM、Retargeting 修复)
-│   ├── toolbar.js             # 浮动工具栏 UI (Shadow DOM 隔离、纯 DOM API、Trusted Types 免疫)
-│   ├── replacer.js            # 文本替换引擎 (execCommand + Range fallback 状态同步)
-│   ├── content.css            # 宿主层基础隔离样式
-│   └── content.js             # Content Script 主入口胶水层
-├── popup/
-│   ├── popup.html             # 扩展状态弹出页与创作者卡片
-│   └── popup.js               # 安全打开外部链接
-├── icons/                     # 16x16, 32x32, 48x48, 128x128 扩展高清图标
-├── store-assets/              # 商店提交用 1280x800 截图与 440x280 推广小磁贴
-├── CHROMEWEBSTORE.md          # Chrome Web Store & Edge Add-ons 提交全套物料
-├── STORE_LISTING.md           # 商店文案资料包
-├── PRIVACY_POLICY.md          # 隐私权政策 (公开托管)
-└── HANDOVER.md                # 完整技术架构交接全景文档
-```
+### Option A: Install from Store (Recommended)
+- **Chrome Web Store**: *Pending review submission*
+- **Microsoft Edge Add-ons**: *Pending review submission*
+
+### Option B: Load Unpacked in Developer Mode
+
+1. **Clone or Download** this repository:
+   ```bash
+   git clone https://github.com/xemee82/formatly-for-linkedin.git
+   ```
+2. **Open Extensions Page**:
+   - Google Chrome: Navigate to `chrome://extensions`
+   - Microsoft Edge: Navigate to `edge://extensions`
+3. **Enable Developer Mode**:
+   - Toggle on **Developer mode** in the top-right (Chrome) or bottom-left (Edge).
+4. **Load Extension**:
+   - Click **Load unpacked** and select the cloned project root directory.
+5. **Start Formatting**:
+   - Open or refresh any page on [LinkedIn](https://www.linkedin.com/feed/), create a post, highlight any text, and enjoy!
 
 ---
 
-## 开源渊源与致敬 (Acknowledgments)
+## 📖 How to Use
 
-本项目在初期调研与技术探索阶段，参考了 GitHub 开源项目 [viclafouch/beautify-post](https://github.com/viclafouch/beautify-post) (MIT License，作者：Victor de la Fouchardiere)。在此对其早期的交互范式探索表示感谢！
-
-针对 2026 年现代 LinkedIn 生产环境，本项目进行了 100% 的原生纯重构（摒弃 React/Webpack，包体积缩减 95% 至 ~35KB；攻克了 `#interop-outlet` Shadow DOM 穿透、Trusted Types CSP 规避以及 Quill 撤销栈同步）。详见 [HANDOVER.md](file:///Users/tylerh/Documents/Antigravity/linkedin-text-formatter/HANDOVER.md)。
-
----
-
-## 免责声明 (Disclaimer)
-
-Formatly for LinkedIn 是一款独立的开源浏览器扩展，与 LinkedIn 官方（LinkedIn Corporation）及其关联方没有任何隶属、认可、赞助或合作关系。LinkedIn 是 LinkedIn Corporation 的注册商标。
+1. Click **Start a post** on LinkedIn (or go to any comment section).
+2. Type your thoughts and select the keywords you want to emphasize with your mouse.
+3. The black floating toolbar appears automatically above your selection.
+4. Click `B`, `I`, `B`, or `𝗕` to format instantly.
+5. To undo or revert, select the formatted text and click `Aa`, or press `Cmd + Z` / `Ctrl + Z`.
 
 ---
 
-## 常见问题与排错 (FAQ)
+## 🛠️ Architecture & Engineering Highlights
 
-**Q：加载扩展后在发帖框划选没有弹出工具栏？**  
-A：
-1. 确保扩展已成功启用（在 `edge://extensions` 或 `chrome://extensions` 中开关为开启状态）；
-2. 扩展更新或重载后，**必须按 `Cmd + R` (Mac) 或 `F5` (Windows) 刷新一次 LinkedIn 页面**，以便浏览器将最新 Content Script 注入页面 DOM；
-3. 确保选中的文字不是纯空格或空字符。
+Modern web applications like LinkedIn employ aggressive defensive measures (Web Components, Shadow DOM, and strict Content Security Policies). Formatly was engineered from scratch to solve these obstacles:
 
-**Q：格式化后的文字发出去别人能看见吗？**  
-A：完全可以。Unicode 数学字母符号属于全平台统一标准编码，任何人的手机、电脑甚至邮件通知都能原生显示，不需要对方安装任何插件。
+1. **Trusted Types CSP Immunity**: LinkedIn strictly enforces Trusted Types, blocking string HTML assignments (`innerHTML`). Formatly constructs all UI elements strictly using native DOM APIs (`document.createElement`), completely immune to CSP violations.
+2. **Shadow DOM Selection Retargeting Penetration**: In modern LinkedIn (2026+), post composers are encapsulated inside `#interop-outlet` Open Shadow Roots. Standard `window.getSelection()` returns retargeted coordinates with zero width/height. Formatly implements deep active shadow traversal (`activeElement.shadowRoot.getSelection()`) to extract physical screen bounding rects accurately.
+3. **Quill.js Internal Delta Synchronization**: Direct DOM mutations bypass Quill's internal state machine, causing disabled post buttons and broken undo stacks. Formatly prioritizes `document.execCommand('insertText')`, dispatching native browser input events that keep the editor's internal Delta synchronized.
 
+---
+
+## 🤝 Open Source Heritage & Acknowledgments
+
+During early prototyping and technical evaluation, this project referenced and analyzed the pioneering open-source work of [viclafouch/beautify-post](https://github.com/viclafouch/beautify-post) (MIT License, created by Victor de la Fouchardiere). We express our sincere gratitude to Victor for his early explorations into inline formatting UX.
+
+To accommodate modern LinkedIn (2026+), Formatly underwent a complete **100% native re-architecture**:
+- Replaced the heavy React 18 / Emotion / Webpack build stack with pure Vanilla ES6+ (reducing bundle size by 95% down to ~35KB).
+- Re-engineered selection detectors to penetrate modern `#interop-outlet` Shadow Roots.
+- Migrated all DOM rendering to pure DOM APIs to bypass strict Trusted Types enforcement.
+- Expanded support to comment sections and long-form articles, and added Sans-Serif Bold styles.
+
+Detailed technical comparisons are documented in [HANDOVER.md](file:///Users/tylerh/Documents/Antigravity/linkedin-text-formatter/HANDOVER.md).
+
+---
+
+## ⚖️ Trademark Disclaimer
+
+**Formatly for LinkedIn** is an independent, open-source project and is **NOT** affiliated with, endorsed, sponsored, or otherwise related to LinkedIn Corporation or its affiliates. "LinkedIn" is a registered trademark of LinkedIn Corporation.
+
+---
+
+## 🌏 About the Creator & Location
+
+- **Headquarters / Release Origin**: Singapore 🇸🇬
+- **Author**: **Tianlu (Tyler) HUANG** ([LinkedIn Profile](https://www.linkedin.com/in/tianluhuang/))
+- **Role**: Co-founder & COO @ Transfong | Tech Ventures Cross-Border
+- **Philosophy**: Crafting clean, non-invasive, privacy-first productivity tools for global founders, venture builders, and content creators.
+
+---
+
+## 🇨🇳 简要中文介绍 (Chinese Summary)
+
+**Formatly for LinkedIn** 是一款诞生于新加坡、面向全球创作者与商务人士的极简领英排版浏览器扩展（Manifest V3）。
+
+### 核心亮点：
+1. **即选即弹**：在 LinkedIn 发帖框、评论区或文章编辑器中用鼠标划选文字，黑色悬浮工具栏即刻精准浮现；
+2. **5 种字体风格**：支持衬线粗体、衬线斜体、粗斜体、无衬线粗体，以及 `Aa` 一键还原纯文本；
+3. **跨端通用呈现**：基于国际 Unicode 数学字符标准编码，无论读者在 iOS、Android 还是电脑端查看，排版均能原样清晰呈现；
+4. **底层架构攻坚**：100% 原生 DOM API 规避 Trusted Types CSP 拦截，深度穿透 Shadow DOM 获取真实选区，完美联动 Quill 编辑器撤销栈（`Cmd+Z` / `Ctrl+Z`）；
+5. **绝对零权限与隐私纯净**：无外置权限、无数据存储、不采集任何浏览记录与按键内容，所有运算纯本地离线执行；
+6. **开源免费**：采用宽松的 MIT 许可证全量开源。
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).  
+Copyright (c) 2026 Tianlu (Tyler) HUANG.
