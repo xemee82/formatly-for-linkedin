@@ -63,7 +63,7 @@ Stop switching tabs to copy-paste from external generator websites. Just select 
 This extension is an independent open-source project and is NOT affiliated with, endorsed, sponsored, or otherwise related to LinkedIn Corporation or its affiliates. LinkedIn is a registered trademark of LinkedIn Corporation.
 
 Formatly for LinkedIn is open source under the MIT License.
-GitHub Repository: https://github.com/tylerhuang/formatly-for-linkedin
+GitHub Repository: https://github.com/xemee82/formatly-for-linkedin
 ```
 
 ---
@@ -99,9 +99,9 @@ GitHub Repository: https://github.com/tylerhuang/formatly-for-linkedin
 ### 3.4 隐私政策公开链接 (Privacy Policy URL)
 在后台 **Privacy policy** 输入框中填写公开访问链接：
 - 推荐使用 GitHub 仓库公开文件链接：
-  `https://github.com/tylerhuang/formatly-for-linkedin/blob/main/PRIVACY_POLICY.md`
+  `https://github.com/xemee82/formatly-for-linkedin/blob/main/PRIVACY_POLICY.md`
 - 或 GitHub Raw 链接：
-  `https://raw.githubusercontent.com/tylerhuang/formatly-for-linkedin/main/PRIVACY_POLICY.md`
+  `https://raw.githubusercontent.com/xemee82/formatly-for-linkedin/main/PRIVACY_POLICY.md`
 
 ---
 
