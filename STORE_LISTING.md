@@ -53,6 +53,7 @@ Stop switching tabs to copy-paste from external generator websites. Just select 
   - Aa (One-click Revert to plain text)
 • Universal Compatibility: Formatted with standard Unicode characters. Your text renders perfectly on iOS, Android, desktop browsers, and email notifications—no plugins required for readers!
 • Full Undo/Redo Support: Fully synchronized with LinkedIn's internal editor. Press Cmd+Z / Ctrl+Z anytime to undo.
+• Strict Site-Isolation: Runs exclusively on LinkedIn (linkedin.com). It never runs or injects on any other website, ensuring zero interference with your daily browsing.
 • Zero Distraction: No complicated settings or bloated side panels. It only shows up when you need it.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -66,7 +67,8 @@ Stop switching tabs to copy-paste from external generator websites. Just select 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🔒 PRIVACY & SECURITY FIRST
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Zero sensitive permissions: Does not request browsing history, identity, or storage permissions.
+• Zero sensitive permissions: Does not request browsing history, identity, storage, or external API access.
+• Strictly Scoped: Limited solely to LinkedIn domains (*.linkedin.com). Never requests "access to all websites".
 • 100% Local: All conversions happen completely offline inside your browser. No data is collected, stored, or sent over the internet.
 • Fully compliant with LinkedIn's Content Security Policy.
 

@@ -42,6 +42,7 @@ Whenever you select text inside LinkedIn's post composer, comment field, or arti
 - 🌐 **Universal Cross-Platform Rendering**: Formatted with standard mathematical Unicode characters. Renders natively on iOS, Android, desktop browsers, and email notifications without readers needing any plugin.
 - 🔄 **Native Undo/Redo Synchronized**: Fully integrated with LinkedIn's internal Quill.js editor via native input transactions. Press `Cmd+Z` / `Ctrl+Z` to undo seamlessly.
 - 🛡️ **Zero Sensitive Permissions**: Runs 100% locally and offline. Requires NO external host permissions, NO storage permissions, and collects NO telemetry or personal data.
+- 🔒 **Strict Site-Isolation (LinkedIn Only)**: Injected strictly into `*.linkedin.com`. It NEVER runs, listens, or executes on any other website (Google, Twitter/X, Notion, etc.), ensuring zero interference with your daily web browsing and zero cross-site privacy risk.
 - ⚡ **Ultra Lightweight (~35KB)**: Built with pure Vanilla ES6+ without React, Webpack, or external dependencies.
 
 <p align="center">
@@ -130,10 +131,11 @@ Detailed technical comparisons are documented in [HANDOVER.md](file:///Users/tyl
 ### 核心亮点：
 1. **即选即弹**：在 LinkedIn 发帖框、评论区或文章编辑器中用鼠标划选文字，黑色悬浮工具栏即刻精准浮现；
 2. **5 种字体风格**：支持衬线粗体、衬线斜体、粗斜体、无衬线粗体，以及 `Aa` 一键还原纯文本；
-3. **跨端通用呈现**：基于国际 Unicode 数学字符标准编码，无论读者在 iOS、Android 还是电脑端查看，排版均能原样清晰呈现；
-4. **底层架构攻坚**：100% 原生 DOM API 规避 Trusted Types CSP 拦截，深度穿透 Shadow DOM 获取真实选区，完美联动 Quill 编辑器撤销栈（`Cmd+Z` / `Ctrl+Z`）；
-5. **绝对零权限与隐私纯净**：无外置权限、无数据存储、不采集任何浏览记录与按键内容，所有运算纯本地离线执行；
-6. **开源免费**：采用宽松的 MIT 许可证全量开源。
+3. **严格域名隔离（仅限领英）**：扩展执行范围被严格锁死在 `*.linkedin.com` 域名内。在领英之外的任何网站（如 Google、Twitter、Notion、知乎等）绝对不注入代码、不占内存、不干扰任何划选，安装时绝无“读取您在所有网站上的数据”的恐慌警告；
+4. **跨端通用呈现**：基于国际 Unicode 数学字符标准编码，无论读者在 iOS、Android 还是电脑端查看，排版均能原样清晰呈现；
+5. **底层架构攻坚**：100% 原生 DOM API 规避 Trusted Types CSP 拦截，深度穿透 Shadow DOM 获取真实选区，完美联动 Quill 编辑器撤销栈（`Cmd+Z` / `Ctrl+Z`）；
+6. **绝对零权限与隐私纯净**：无外置权限、无数据存储、不采集任何浏览记录与按键内容，所有运算纯本地离线执行；
+7. **开源免费**：采用宽松的 MIT 许可证全量开源。
 
 ---
 
