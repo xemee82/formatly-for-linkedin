@@ -1,0 +1,72 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0A1128"/>
+      <stop offset="100%" stop-color="#030610"/>
+    </linearGradient>
+    <linearGradient id="neonElectric" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F5FF"/>
+      <stop offset="50%" stop-color="#0066FF"/>
+      <stop offset="100%" stop-color="#7B00FF"/>
+    </linearGradient>
+    <linearGradient id="pureWhiteMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <filter id="ultraGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.95"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#00F5FF" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect x="20" y="20" width="472" height="472" rx="112" fill="url(#bgNavy)"/>
+  <rect x="21" y="21" width="470" height="470" rx="111" fill="none" stroke="url(#neonElectric)" stroke-width="3"/>
+
+  <g filter="url(#ultraGlow)">
+    <!-- 粗体 B 的左半部分 (重磅白银垂直脊梁) -->
+    <path d="M 120 108 L 228 108 L 228 404 L 120 404 Z" fill="url(#pureWhiteMetal)"/>
+    <!-- 顶部与底部重磅先锋衬线 -->
+    <polygon points="100,108 248,108 238,122 110,122" fill="#FFFFFF"/>
+    <polygon points="100,404 248,404 238,390 110,390" fill="url(#pureWhiteMetal)"/>
+
+    <!-- 粗体 B 的右侧双弧：用动感斜向 3D 悬浮刀锋结构呈现 (Italic Wing) -->
+    <!-- 上半环 -->
+    <path d="M 228 108 
+             L 326 108 
+             C 382 108, 412 136, 412 182 
+             C 412 222, 384 246, 336 252 
+             L 228 252 
+             Z
+             M 284 158 
+             L 284 204 
+             L 320 204 
+             C 340 204, 354 196, 354 181 
+             C 354 166, 340 158, 320 158 
+             Z" 
+          fill="url(#neonElectric)"/>
+
+    <!-- 下半环：向外延伸更具张力 -->
+    <path d="M 228 252 
+             L 348 252 
+             C 402 252, 434 282, 434 332 
+             C 434 386, 392 404, 334 404 
+             L 228 404 
+             Z
+             M 284 304 
+             L 284 354 
+             L 328 354 
+             C 352 354, 372 344, 372 329 
+             C 372 314, 352 304, 328 304 
+             Z" 
+          fill="url(#neonElectric)"/>
+
+    <!-- 贯穿在 B 正中的斜切光束 (倾斜 15 度) -->
+    <polygon points="262,80 286,80 184,432 160,432" fill="#FFFFFF" opacity="0.85"/>
+  </g>
+
+  <!-- 格式化火花 -->
+  <path d="M 426 94 Q 426 114, 446 114 Q 426 114, 426 134 Q 426 114, 406 114 Q 426 114, 426 94 Z" fill="#00F5FF"/>
+</svg>
