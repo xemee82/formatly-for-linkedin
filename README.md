@@ -118,7 +118,7 @@ Detailed technical comparisons are documented in [HANDOVER.md](file:///Users/tyl
 ## 🌏 About the Creator & Location
 
 - **Headquarters / Release Origin**: Singapore 🇸🇬
-- **Author**: **Tianlu (Tyler) HUANG** ([LinkedIn Profile](https://www.linkedin.com/in/tianluhuang/))
+- **Author**: **Tianlu (Tyler) HUANG** ([LinkedIn Profile](https://www.linkedin.com/in/tylerhuangsg/))
 - **Role**: Co-founder & COO @ Transfong | Tech Ventures Cross-Border
 - **Philosophy**: Crafting clean, non-invasive, privacy-first productivity tools for global founders, venture builders, and content creators.
 
