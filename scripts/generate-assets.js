@@ -452,11 +452,12 @@ const html2 = `<!DOCTYPE html>
   }
   .popup-card {
     width: 320px;
-    background: #0B0F19;
-    border: 1px solid #334155;
-    border-radius: 12px;
+    background: linear-gradient(180deg, #444B59 0%, #39404E 100%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 14px;
     padding: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    color: #FFFFFF;
   }
   .pop-head {
     display: flex;
@@ -468,7 +469,6 @@ const html2 = `<!DOCTYPE html>
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    background: #0A66C2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -476,39 +476,42 @@ const html2 = `<!DOCTYPE html>
   .pop-title h3 {
     font-size: 14px;
     font-weight: 700;
+    color: #FFFFFF;
   }
   .pop-status {
     font-size: 11px;
-    color: #38BDF8;
+    color: #67E8F9;
+    font-weight: 600;
   }
   .pop-hint {
-    background: #131B2E;
-    border: 1px solid #1E293B;
-    border-radius: 6px;
+    background: #2F3542;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
     padding: 10px;
     font-size: 11px;
-    color: #94A3B8;
+    color: #E2E8F0;
     line-height: 1.4;
     margin-bottom: 16px;
   }
   .pop-creator {
-    border-top: 1px solid #1E293B;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
     padding-top: 12px;
   }
   .pop-c-label {
     font-size: 9px;
     text-transform: uppercase;
-    color: #64748B;
+    color: #A0AEC0;
     font-weight: 700;
   }
   .pop-c-name {
     font-size: 13px;
     font-weight: 700;
     margin-top: 2px;
+    color: #FFFFFF;
   }
   .pop-c-title {
     font-size: 11px;
-    color: #94A3B8;
+    color: #CBD5E1;
     margin-top: 2px;
   }
   .pop-btn {
@@ -521,12 +524,13 @@ const html2 = `<!DOCTYPE html>
     text-align: center;
     background: #0A66C2;
     color: #fff;
+    box-shadow: 0 2px 8px rgba(10, 102, 194, 0.35);
   }
   .pop-btn-sec {
     margin-top: 6px;
-    background: #1E293B;
-    border: 1px solid #334155;
-    color: #E2E8F0;
+    background: #323846;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
   }
 
   .footer-features {
