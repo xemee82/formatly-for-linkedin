@@ -24,48 +24,40 @@
 > 💡 **操作指南**：直接复制以下虚线框内的纯文本内容，粘贴至 Chrome/Edge 开发者后台的 **Description** 文本框中（纯文本排版，已兼容商店纯文本换行格式，已包含必要的商标免责声明）：
 
 ```text
-Formatly for LinkedIn makes your posts, comments, and articles stand out with stylish bold, italic, and Unicode typography—instantly, without ever leaving LinkedIn.
+Formatly for LinkedIn provides an inline formatting toolbar directly inside LinkedIn's post composer, comment field, and article editor. It eliminates the need to switch browser tabs to copy-paste formatted text from external generator websites.
 
-Stop switching tabs to copy-paste from external generator websites. Just select any text inside LinkedIn's post composer or comment box, and a sleek floating toolbar will appear right above your cursor.
+Select any text within an editable field on LinkedIn to format it instantly with bold, italic, and Unicode typography.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✨ KEY FEATURES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Instant Floating Toolbar: Appears seamlessly when you select text in any editable post, comment, or article.
-• 5 Essential Styles:
-  - 𝐁𝐨𝐥𝐝 (Serif Bold)
-  - 𝐼𝑡𝑎𝑙𝑖𝑐 (Serif Italic)
-  - 𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄 (Serif Bold Italic)
-  - 𝗕𝗼𝗹𝗱 (Sans-Serif Bold)
-  - Aa (One-click Revert to plain text)
-• Universal Compatibility: Formatted with standard Unicode characters. Your text renders perfectly on iOS, Android, desktop browsers, and email notifications—no plugins required for readers!
-• Full Undo/Redo Support: Fully synchronized with LinkedIn's internal editor. Press Cmd+Z / Ctrl+Z anytime to undo.
-• Strict Site-Isolation: Runs exclusively on LinkedIn (linkedin.com). It never runs or injects on any other website, ensuring zero interference with your daily browsing.
-• Zero Distraction: No complicated settings or bloated side panels. It only shows up when you need it.
+FEATURES
+- Instant Floating Toolbar: Appears directly over selected text within LinkedIn's editor.
+- Five Core Styles:
+  * Serif Bold (𝐁𝐨𝐥𝐝)
+  * Serif Italic (𝐼𝑡𝑎𝑙𝑖𝑐)
+  * Serif Bold Italic (𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄)
+  * Sans-Serif Bold (𝗕𝗼𝗹𝗱)
+  * Plain Revert (Aa): Restores styled text to standard plain characters.
+- Universal Compatibility: Uses standard Unicode characters. Styled text renders consistently across iOS, Android, web browsers, and email notifications without requiring plugins for readers.
+- Editor Synchronization: Integrates with LinkedIn's internal Quill editor model via native input commands, keeping the submit button active and preserving Cmd+Z / Ctrl+Z undo history.
+- Strict Site Isolation: Configured strictly for *.linkedin.com. The extension never runs on or inspects any other website.
+- Clean and Unobtrusive: No configuration panels or background processes. The toolbar only displays when text is selected.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 HOW TO USE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW TO USE
 1. Start writing a post or comment on LinkedIn.
-2. Highlight/select the text you want to emphasize with your mouse.
-3. Click "B", "I", or any style on the floating black toolbar.
-4. Your text formats instantly. Highlight again and click "Aa" to revert to normal text anytime!
+2. Highlight the text you want to format.
+3. Click "B", "I", or any style on the floating toolbar.
+4. To revert, highlight the styled text and click "Aa", or press Cmd+Z / Ctrl+Z.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔒 PRIVACY & SECURITY FIRST
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Zero sensitive permissions: Does not request browsing history, identity, storage, or external API access.
-• Strictly Scoped: Limited solely to LinkedIn domains (*.linkedin.com). Never requests "access to all websites".
-• 100% Local: All conversions happen completely offline inside your browser. No data is collected, stored, or sent over the internet.
-• Fully compliant with LinkedIn's Content Security Policy.
+PRIVACY & SECURITY
+- Zero sensitive permissions: Declares no host permissions, no storage access, and no background worker.
+- Site-isolated: Scoped exclusively to *.linkedin.com.
+- Local execution: All transformations occur locally in your browser. No data is collected, logged, or transmitted.
+- Fully compliant with LinkedIn's Content Security Policy.
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📄 DISCLAIMER & ACKNOWLEDGMENTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-This extension is an independent open-source project and is NOT affiliated with, endorsed, sponsored, or otherwise related to LinkedIn Corporation or its affiliates. LinkedIn is a registered trademark of LinkedIn Corporation.
+DISCLAIMER
+Formatly for LinkedIn is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation. LinkedIn is a registered trademark of LinkedIn Corporation.
 
-Formatly for LinkedIn is open source under the MIT License.
-GitHub Repository: https://github.com/xemee82/formatly-for-linkedin
+Open source under the MIT License:
+https://github.com/xemee82/formatly-for-linkedin
 ```
 
 ---

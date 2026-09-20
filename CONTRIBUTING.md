@@ -4,7 +4,7 @@ Thank you for your interest in contributing to **Formatly for LinkedIn**! We wel
 
 ---
 
-## 🛠️ Development Setup
+## Development Setup
 
 1. **Clone the repository**:
    ```bash
@@ -25,7 +25,7 @@ Thank you for your interest in contributing to **Formatly for LinkedIn**! We wel
 
 ---
 
-## 🎨 Adding New Typography Styles
+## Adding Typography Styles
 
 To add a new Unicode font style:
 1. Open `content/unicode-map.js`.
@@ -35,7 +35,7 @@ To add a new Unicode font style:
 
 ---
 
-## 📝 Pull Request Guidelines
+## Pull Request Guidelines
 
 1. Ensure all unit tests pass (`node content/unicode-map.test.js`).
 2. Keep the extension **Zero-Permission**: do not add `permissions` or `host_permissions` unless strictly discussed and approved in an issue.
