@@ -30,6 +30,7 @@ Select any text within an editable field on LinkedIn to format it instantly with
 
 FEATURES
 - Instant Floating Toolbar: Appears directly over selected text within LinkedIn's editor.
+- Universal Comment & Reply Support: Works seamlessly across posts, inline feed comments, and deeply nested reply threads without disabling submit buttons.
 - Five Core Styles:
   * Serif Bold (𝐁𝐨𝐥𝐝)
   * Serif Italic (𝐼𝑡𝑎𝑙𝑖𝑐)

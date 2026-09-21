@@ -22,7 +22,7 @@
 
 Formatly for LinkedIn is a lightweight browser extension that provides inline text styling directly within LinkedIn's web interface. It removes the need to switch tabs to external font generator tools when writing posts, comments, or articles.
 
-Selecting text inside LinkedIn's composer brings up a focused formatting toolbar immediately above the cursor, allowing immediate conversion to bold, italic, bold-italic, and sans-serif bold Unicode styles, with one-click restoration to plain text.
+Unlike traditional formatting extensions that only function inside the main post composer modal, Formatly provides seamless **inline editing across post composers, feed comments, and deeply nested reply threads**. Selecting any text immediately brings up a focused floating toolbar above the cursor, enabling instant conversion to bold, italic, bold-italic, and sans-serif bold Unicode styles, with one-click restoration to plain text.
 
 <p align="center">
   <img src="store-assets/screenshot-1.png" alt="Formatly Floating Toolbar in LinkedIn" width="800">
@@ -33,14 +33,15 @@ Selecting text inside LinkedIn's composer brings up a focused formatting toolbar
 ## Features
 
 - **Instant Floating Toolbar**: Positioned directly over selected text within editable post composers, comments, and articles.
+- **Universal Comment & Threaded Reply Coverage**: Fully supports dynamically mounted feed comments and multi-level reply threads without disabling the "Comment" or "Reply" submit buttons.
 - **Five Core Styles**:
   - Serif Bold: `𝐇𝐞𝐥𝐥𝐨 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧`
-  - Serif Italic: `𝐻𝑒𝑙𝑙𝑜 𝐿𝑖𝑛𝑘𝑒𝑑𝐼𝑛`
+  - Serif Italic: `𝐻𝑒𝑙𝑙𝑜 𝐿𝑖𝐧𝐤𝐞𝐝𝐈𝐧`
   - Bold Italic: `𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝒏𝒌𝒆𝒅𝑰𝒏`
   - Sans-Serif Bold: `𝗛𝗲𝗹𝗹𝗼 𝗟𝗶𝗻𝗸𝗲𝗱𝗜𝗻`
   - Plain Revert (`Aa`): Converts stylized Unicode back to standard ASCII text.
 - **Universal Cross-Platform Rendering**: Based on international Unicode mathematical alphanumeric symbols. Styled text renders consistently across iOS, Android, web browsers, and email previews without requiring extensions for readers.
-- **Editor Synchronization**: Dispatches native input events through `document.execCommand('insertText')` to keep LinkedIn's internal Quill editor model in sync, preserving the active Post button state and native undo/redo history (`Cmd+Z` / `Ctrl+Z`).
+- **Editor Synchronization**: Dispatches native input events through `document.execCommand('insertText')` to keep LinkedIn's internal Quill editor model in sync, preserving the active Post/Reply button state and native undo/redo history (`Cmd+Z` / `Ctrl+Z`).
 - **Zero Sensitive Permissions**: Runs fully local and offline. Declares no storage permissions, no background service worker, and transmits no telemetry or user data.
 - **Strict Site Isolation**: Limited exclusively to `*.linkedin.com`. The extension does not inject or observe activity on any other domain.
 - **Lightweight Architecture (~35KB)**: Implemented in clean Vanilla ES6+ without React, bundlers, or third-party runtime dependencies.
@@ -88,7 +89,8 @@ Modern Web applications employ strict runtime defenses, including Web Components
 
 1. **Trusted Types CSP Compliance**: LinkedIn enforces Trusted Types policies that disallow direct `innerHTML` assignments. Formatly constructs and mounts all DOM nodes using programmatic DOM APIs (`document.createElement`), preventing CSP violations.
 2. **Shadow DOM Selection Penetration**: Modern LinkedIn post editors reside inside open shadow roots under `#interop-outlet`. Standard `window.getSelection()` returns retargeted coordinates with zero-width boundaries. Formatly traverses active shadow hierarchies (`activeElement.shadowRoot.getSelection()`) to compute true bounding rectangles.
-3. **Quill.js Model Alignment**: Direct DOM node replacements fail to update Quill's internal Delta store, which can disable submit actions. Formatly uses native input commands that propagate naturally through the editor's event pipeline.
+3. **Quill.js Model Alignment**: Direct DOM node replacements fail to update Quill's internal Delta store, which can disable submit actions. Formatly uses native input commands (`document.execCommand('insertText')`) that propagate naturally through the editor's event pipeline.
+4. **Dynamic DOM & Threaded Reply Support**: Unlike traditional extensions tied to static post modal IDs, Formatly uses an ancestor-traversing contenteditable scanner. It dynamically detects text selections within feed comment fields and deeply nested reply threads, calculating precise viewport offsets on the fly without breaking button state.
 
 ---
 
@@ -126,11 +128,11 @@ Formatly for LinkedIn is an independent open-source project and is not affiliate
 **Formatly for LinkedIn** 是一款面向专业创作者与商务人士的轻量级领英排版扩展（Manifest V3）。
 
 ### 核心特性
-1. **即划即弹**：在 LinkedIn 发帖框、评论区或文章编辑器中划选文字，浮动工具栏自动定位至选区上方。
+1. **即划即弹与全场景覆盖**：不仅支持首页主发帖框与长文章编辑器，更完整支持信息流中的**评论框（Comments）与多级嵌套回复框（Threaded Replies）**。划选文字即自动在选区上方悬浮工具栏。
 2. **五款常用样式**：提供衬线粗体、衬线斜体、粗斜体、无衬线粗体，以及 `Aa` 一键还原纯文本。
 3. **严格域名隔离**：仅在 `*.linkedin.com` 作用域内运行，绝不注入或监听其他任何网站，安装时无宽泛权限告警。
 4. **全端原生呈现**：基于国际 Unicode 数学字母编码，排版在移动端（iOS / Android）、网页端及邮件摘要中均可直接显示，阅读者无需安装插件。
-5. **底层编辑器同步**：使用原生输入指令保持与 Quill 编辑器内部状态同步，完整保留 `Cmd+Z` / `Ctrl+Z` 撤销重做历史。
+5. **底层编辑器状态同步**：针对评论框与回复框易碎的 Quill.js 实例，通过原生输入指令派发更新，确保格式化后“评论/回复”提交按钮立即可用，且保留完整的 `Cmd+Z` / `Ctrl+Z` 撤销重做历史。
 6. **零敏感权限与离线运算**：不申请存储与网络权限，不收集任何用户输入与浏览数据，全流程本地即时处理。
 7. **宽松开源协议**：采用 MIT 许可证开放源码。
 
