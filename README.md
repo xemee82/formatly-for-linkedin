@@ -9,6 +9,7 @@
 </p>
 
 <p align="center">
+  <a href="https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo"><img src="https://img.shields.io/badge/Microsoft%20Edge%20Add--ons-v1.0.0%20Live-0078D7?logo=microsoftedge&logoColor=white" alt="Microsoft Edge Add-ons"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Manifest-V3-success.svg" alt="Manifest V3">
   <img src="https://img.shields.io/badge/Permissions-Zero-brightgreen.svg" alt="Zero Permissions">
@@ -36,9 +37,9 @@ Unlike traditional formatting extensions that only function inside the main post
 - **Universal Comment & Threaded Reply Coverage**: Fully supports dynamically mounted feed comments and multi-level reply threads without disabling the "Comment" or "Reply" submit buttons.
 - **Five Core Styles**:
   - Serif Bold: `𝐇𝐞𝐥𝐥𝐨 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧`
-  - Serif Italic: `𝐻𝑒𝑙𝑙𝑜 𝐿𝑖𝐧𝐤𝐞𝐝𝐈𝐧`
-  - Bold Italic: `𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝒏𝒌𝒆𝒅𝑰𝒏`
-  - Sans-Serif Bold: `𝗛𝗲𝗹𝗹𝗼 𝗟𝗶𝗻𝗸𝗲𝗱𝗜𝗻`
+  - Serif Italic: `𝐻𝑒𝑙𝑙𝐨 𝐿𝚒𝐧𝐤𝐞𝐝𝐈𝐧`
+  - Bold Italic: `𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝐧𝒌𝐞𝒅𝑰𝒏`
+  - Sans-Serif Bold: `𝗛𝗲𝗹𝗹𝐨 𝗟𝗶𝗻𝗸𝐞𝗱I𝗻`
   - Plain Revert (`Aa`): Converts stylized Unicode back to standard ASCII text.
 - **Universal Cross-Platform Rendering**: Based on international Unicode mathematical alphanumeric symbols. Styled text renders consistently across iOS, Android, web browsers, and email previews without requiring extensions for readers.
 - **Editor Synchronization**: Dispatches native input events through `document.execCommand('insertText')` to keep LinkedIn's internal Quill editor model in sync, preserving the active Post/Reply button state and native undo/redo history (`Cmd+Z` / `Ctrl+Z`).
@@ -55,8 +56,8 @@ Unlike traditional formatting extensions that only function inside the main post
 ## Installation
 
 ### Store Releases
+- **Microsoft Edge Add-ons**: [Install on Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo) (Official Release)
 - **Chrome Web Store**: Pending publication review
-- **Microsoft Edge Add-ons**: Pending publication review
 
 ### Manual Installation (Developer Mode)
 
@@ -135,6 +136,10 @@ Formatly for LinkedIn is an independent open-source project and is not affiliate
 5. **底层编辑器状态同步**：针对评论框与回复框易碎的 Quill.js 实例，通过原生输入指令派发更新，确保格式化后“评论/回复”提交按钮立即可用，且保留完整的 `Cmd+Z` / `Ctrl+Z` 撤销重做历史。
 6. **零敏感权限与离线运算**：不申请存储与网络权限，不收集任何用户输入与浏览数据，全流程本地即时处理。
 7. **宽松开源协议**：采用 MIT 许可证开放源码。
+
+### 官方商店直达安装
+- **Microsoft Edge 官方扩展商店**：[立即安装 Formatly for LinkedIn](https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo)（已正式上线，点击直接安装）
+- **Google Chrome Web Store**：审核进行中
 
 ---
 
