@@ -28,6 +28,11 @@ Formatly provides an inline formatting toolbar directly inside LinkedIn and X (T
 
 Select any text within an editable field on LinkedIn or X (Twitter) to format it instantly with bold, italic, and Unicode typography.
 
+WHAT'S NEW IN v1.1.0
+- Full X (Twitter) Support: Format tweets, threads, quote tweets, and replies with bold, italic, and stylish fonts. No X Premium subscription required.
+- Fixed Messaging Issue: Resolved a bug where the toolbar overlay could intermittently block clicks on LinkedIn's Messaging panel and navigation.
+- Zero-Size Anchor Architecture: Redesigned the toolbar host element to eliminate pointer-event conflicts across all underlying page elements.
+
 HIGHLIGHTS
 - No X Premium Required: Unlock bold, italic, and font styles across all X posts and replies without a paid subscription.
 - Universal Feed Visibility: Uses standard Unicode characters that display natively for all followers across web, iOS, Android, and embeds.
