@@ -1,6 +1,10 @@
 /**
- * 选区检测模块，用于 LinkedIn 文本格式化扩展。
- * 支持普通 DOM 及 Shadow DOM (如 LinkedIn 发帖弹窗 #interop-outlet)
+ * 选区检测模块 (Selection Detector)
+ * 支持 LinkedIn 与 X (Twitter) 双平台的编辑器检测
+ * 
+ * LinkedIn：contenteditable + Shadow DOM (#interop-outlet)
+ * X (Twitter)：contenteditable + role="textbox" + data-testid="tweetTextarea_*"
+ * 
  * 暴露在 window.SelectionDetector 上。
  */
 (function() {
@@ -12,15 +16,16 @@
 
   /**
    * 判断目标节点或当前聚焦元素是否在可编辑区域内
-   * 原生支持 contenteditable 及 Shadow DOM 穿透
-   * @param {Node} node 
-   * @returns {boolean}
+   * 原生支持 contenteditable、Shadow DOM 穿透以及 X 的 role="textbox" 属性检测
    */
   function isTargetEditable(node) {
     if (node) {
       let el = node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
       while (el && el !== document.documentElement) {
-        if (el.isContentEditable || el.getAttribute?.('contenteditable') === 'true') {
+        if (el.isContentEditable || 
+            el.getAttribute?.('contenteditable') === 'true' ||
+            el.getAttribute?.('role') === 'textbox' ||
+            (el.getAttribute?.('data-testid') && el.getAttribute('data-testid').includes('tweetTextarea'))) {
           return true;
         }
         el = el.parentElement || el.parentNode?.host;
@@ -30,7 +35,9 @@
     // 穿透检查 document.activeElement
     let active = document.activeElement;
     while (active) {
-      if (active.isContentEditable || active.getAttribute?.('contenteditable') === 'true') {
+      if (active.isContentEditable || 
+          active.getAttribute?.('contenteditable') === 'true' ||
+          active.getAttribute?.('role') === 'textbox') {
         return true;
       }
       active = active.shadowRoot ? active.shadowRoot.activeElement : null;
@@ -43,7 +50,7 @@
     if (!node) return false;
     let el = node.nodeType === Node.TEXT_NODE ? node.parentElement : node;
     while (el && el !== document.documentElement) {
-      if (el.hasAttribute && el.hasAttribute('data-lif-toolbar')) {
+      if (el.hasAttribute && (el.hasAttribute('data-lif-toolbar') || el.hasAttribute('data-formatly-x-toolbar'))) {
         return true;
       }
       el = el.parentElement || el.parentNode?.host;
@@ -166,8 +173,6 @@
       return;
     }
 
-    console.log('[LIF] ✓ 命中可编辑选区:', details.text, details.rect);
-
     if (onSelectionChangeCb) {
       onSelectionChangeCb({
         text: details.text,
@@ -207,8 +212,6 @@
           debouncedCheckSelection();
         }
       });
-
-      console.log('[LIF] SelectionDetector 监听器已就绪 (Shadow DOM 深度支持模式)');
     },
 
     destroy: function() {

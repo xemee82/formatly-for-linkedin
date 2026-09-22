@@ -1,149 +1,82 @@
-# Formatly for LinkedIn: Bold, Italic & Font Styles
+# Formatly for LinkedIn & X: Bold, Italic & Font Styles
 
-<p align="center">
-  <img src="icons/formatly-aa-icon.png" alt="Formatly Logo" width="96" height="96">
-</p>
+> **Format LinkedIn and X (Twitter) posts, comments, threads & replies with bold, italic, and stylish fonts instantly.**  
+> Free, privacy-first Chrome & Edge browser extension. No X Premium subscription required.
 
-<p align="center">
-  <strong>An inline formatting toolbar for LinkedIn creators, founders, and professionals.</strong>
-</p>
-
-<p align="center">
-  <a href="https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo"><img src="https://img.shields.io/badge/Microsoft%20Edge%20Add--ons-v1.0.0%20Live-0078D7?logo=microsoftedge&logoColor=white" alt="Microsoft Edge Add-ons"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/Manifest-V3-success.svg" alt="Manifest V3">
-  <img src="https://img.shields.io/badge/Permissions-Zero-brightgreen.svg" alt="Zero Permissions">
-  <img src="https://img.shields.io/badge/Dependencies-Zero%20(Vanilla%20ES6%2B)-orange.svg" alt="Zero Dependencies">
-  <img src="https://img.shields.io/badge/Location-Singapore-blue.svg" alt="Singapore">
-</p>
-
----
-
-## Overview
-
-Formatly for LinkedIn is a lightweight browser extension that provides inline text styling directly within LinkedIn's web interface. It removes the need to switch tabs to external font generator tools when writing posts, comments, or articles.
-
-Unlike traditional formatting extensions that only function inside the main post composer modal, Formatly provides seamless **inline editing across post composers, feed comments, and deeply nested reply threads**. Selecting any text immediately brings up a focused floating toolbar above the cursor, enabling instant conversion to bold, italic, bold-italic, and sans-serif bold Unicode styles, with one-click restoration to plain text.
-
-<p align="center">
-  <img src="store-assets/screenshot-1.png" alt="Formatly Floating Toolbar in LinkedIn" width="800">
-</p>
+[![Microsoft Edge Add-ons](https://img.shields.io/badge/Edge%20Add--ons-Live-blue?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo)
 
 ---
 
 ## Features
 
-- **Instant Floating Toolbar**: Positioned directly over selected text within editable post composers, comments, and articles.
-- **Universal Comment & Threaded Reply Coverage**: Fully supports dynamically mounted feed comments and multi-level reply threads without disabling the "Comment" or "Reply" submit buttons.
-- **Five Core Styles**:
-  - Serif Bold: `𝐇𝐞𝐥𝐥𝐨 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧`
-  - Serif Italic: `𝐻𝑒𝑙𝑙𝐨 𝐿𝚒𝐧𝐤𝐞𝐝𝐈𝐧`
-  - Bold Italic: `𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝐧𝒌𝐞𝒅𝑰𝒏`
-  - Sans-Serif Bold: `𝗛𝗲𝗹𝗹𝐨 𝗟𝗶𝗻𝗸𝐞𝗱I𝗻`
-  - Plain Revert (`Aa`): Converts stylized Unicode back to standard ASCII text.
-- **Universal Cross-Platform Rendering**: Based on international Unicode mathematical alphanumeric symbols. Styled text renders consistently across iOS, Android, web browsers, and email previews without requiring extensions for readers.
-- **Editor Synchronization**: Dispatches native input events through `document.execCommand('insertText')` to keep LinkedIn's internal Quill editor model in sync, preserving the active Post/Reply button state and native undo/redo history (`Cmd+Z` / `Ctrl+Z`).
-- **Zero Sensitive Permissions**: Runs fully local and offline. Declares no storage permissions, no background service worker, and transmits no telemetry or user data.
-- **Strict Site Isolation**: Limited exclusively to `*.linkedin.com`. The extension does not inject or observe activity on any other domain.
-- **Lightweight Architecture (~35KB)**: Implemented in clean Vanilla ES6+ without React, bundlers, or third-party runtime dependencies.
-
-<p align="center">
-  <img src="store-assets/screenshot-2.png" alt="Formatly Styles Preview" width="800">
-</p>
+- **Instant Floating Toolbar**: Highlight any text inside LinkedIn or X to format it instantly. No tab switching, no copy-pasting from generator websites.
+- **Full X (Twitter) Support**: Format tweets, threads, quote tweets, and reply boxes without paying for X Premium.
+- **LinkedIn Comment & Reply Support**: Works seamlessly across posts, inline feed comments, and deeply nested reply threads without disabling submit buttons.
+- **Universal Unicode Output**: Built using standard Unicode Mathematical Alphanumeric Symbols. Renders natively for all followers across web, iOS, iPadOS, Android, and external embeds.
+- **Editor State Synchronization**: Employs native `insertText` input commands, ensuring both LinkedIn's Quill and X's React/Draft.js editors keep submit buttons active and character counters accurate.
+- **Full Cmd+Z / Ctrl+Z Undo**: Preserves standard browser undo/redo history on both platforms.
+- **Strict Site Isolation & Zero Permissions**: Runs exclusively on `*.linkedin.com`, `*.x.com`, and `*.twitter.com`. Declares **zero** host permissions, zero storage permissions, and zero background scripts. 100% local client-side execution.
 
 ---
 
-## Installation
+## Supported Typography Styles
 
-### Store Releases
-- **Microsoft Edge Add-ons**: [Install on Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo) (Official Release)
-- **Chrome Web Store**: Pending publication review
+| Style Name | Example Output | Description |
+| :--- | :--- | :--- |
+| **Serif Bold** | `𝐁𝐨𝐥𝐝 𝐓𝐞𝐱𝐭` | Classical high-impact bold typography |
+| **Serif Italic** | `𝐼𝑡𝑎𝑙𝑖𝑐 𝐓𝐞𝐱𝐭` | Elegant italic styling for quotes & emphasis |
+| **Serif Bold Italic** | `𝑩𝒐𝒍𝒅 𝑰𝒕𝒂𝒍𝒊𝒄` | Dynamic emphasis for titles & hooks |
+| **Sans-Serif Bold** | `𝗕𝗼𝗹𝗱 𝗦𝗮𝗻𝘀` | Modern, clean tech aesthetic |
+| **Revert (Plain)** | `Aa Plain Text` | One-click restoration back to standard ASCII |
 
-### Manual Installation (Developer Mode)
+---
 
-1. Clone or download the repository:
+## Quick Start
+
+### Install from Store
+- **Edge**: [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo)
+- **Chrome**: Chrome Web Store (coming soon)
+
+### Load Unpacked (Developer Mode)
+
+1. Clone this repository:
    ```bash
    git clone https://github.com/xemee82/formatly-for-linkedin.git
    ```
-2. Open extension settings in your browser:
-   - Google Chrome: `chrome://extensions`
-   - Microsoft Edge: `edge://extensions`
+2. Open `chrome://extensions/` (Chrome) or `edge://extensions/` (Edge).
 3. Enable **Developer mode**.
-4. Click **Load unpacked** and select the repository root folder.
-5. Navigate to [LinkedIn](https://www.linkedin.com/feed/), create a post, and highlight any text to begin formatting.
+4. Click **Load unpacked** and select the project directory.
+5. Open [linkedin.com](https://www.linkedin.com) or [x.com](https://x.com), select any text in an editor, and the toolbar will appear.
 
 ---
 
-## Usage
+## Architecture
 
-1. Open LinkedIn and begin a new post, comment, or article.
-2. Select the words or phrases you wish to emphasize.
-3. The formatting toolbar appears above the selection.
-4. Click `B`, `I`, `B`, or `𝗕` to apply the desired style.
-5. Highlight styled text and click `Aa` to revert, or press `Cmd+Z` / `Ctrl+Z` to undo.
-
----
-
-## Engineering Highlights
-
-Modern Web applications employ strict runtime defenses, including Web Components, Shadow DOM encapsulation, and Content Security Policies. Formatly addresses these design challenges:
-
-1. **Trusted Types CSP Compliance**: LinkedIn enforces Trusted Types policies that disallow direct `innerHTML` assignments. Formatly constructs and mounts all DOM nodes using programmatic DOM APIs (`document.createElement`), preventing CSP violations.
-2. **Shadow DOM Selection Penetration**: Modern LinkedIn post editors reside inside open shadow roots under `#interop-outlet`. Standard `window.getSelection()` returns retargeted coordinates with zero-width boundaries. Formatly traverses active shadow hierarchies (`activeElement.shadowRoot.getSelection()`) to compute true bounding rectangles.
-3. **Quill.js Model Alignment**: Direct DOM node replacements fail to update Quill's internal Delta store, which can disable submit actions. Formatly uses native input commands (`document.execCommand('insertText')`) that propagate naturally through the editor's event pipeline.
-4. **Dynamic DOM & Threaded Reply Support**: Unlike traditional extensions tied to static post modal IDs, Formatly uses an ancestor-traversing contenteditable scanner. It dynamically detects text selections within feed comment fields and deeply nested reply threads, calculating precise viewport offsets on the fly without breaking button state.
+- **Pure Vanilla ES6+**: Zero build tools, zero bundlers, zero npm dependencies.
+- **Shadow DOM Isolation**: The floating toolbar is rendered inside an open Shadow DOM root, preventing CSS conflicts with host site design systems.
+- **Trusted Types & CSP Compliant**: Constructed 100% via native DOM APIs (`createElement`, `textContent`, `setAttribute`). Completely avoids `innerHTML`.
+- **Zero-Size Anchor Host**: The toolbar host element uses `width: 0; height: 0; overflow: visible` to ensure it never blocks clicks on underlying page elements (including Messaging panels, navigation overlays, etc.).
 
 ---
 
-## Open Source Heritage
+## Changelog
 
-This project acknowledges the exploratory work of [viclafouch/beautify-post](https://github.com/viclafouch/beautify-post) (MIT License, by Victor de la Fouchardiere). 
-
-Formatly represents a complete re-implementation tailored to contemporary LinkedIn infrastructure:
-- Replaced the React 18 / Emotion / Webpack stack with dependency-free Vanilla ES6+, reducing package size by 95%.
-- Implemented Shadow DOM traversal to accommodate `#interop-outlet` encapsulation.
-- Structured all UI construction around native DOM nodes to maintain full Trusted Types compliance.
-- Added bidirectional Unicode mapping, comment-field coverage, and sans-serif bold styling.
-
-Detailed architecture comparisons are documented in [HANDOVER.md](file:///Users/tylerh/Documents/Antigravity/linkedin-text-formatter/HANDOVER.md).
+See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 
 ---
 
-## Trademark Disclaimer
+## Creator & Maintainer
 
-Formatly for LinkedIn is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation. "LinkedIn" is a registered trademark of LinkedIn Corporation.
-
----
-
-## About the Author
-
-- **Origin**: Singapore
-- **Author**: Tianlu (Tyler) HUANG ([LinkedIn Profile](https://www.linkedin.com/in/tylerhuangsg/))
-- **Affiliation**: Co-founder & COO, Transfong | Cross-Border Tech Ventures
-- **Scope**: Focused on minimalist, non-invasive productivity tools for cross-border founders, operators, and writers.
-
----
-
-## 简体中文概览 (Summary in Chinese)
-
-**Formatly for LinkedIn** 是一款面向专业创作者与商务人士的轻量级领英排版扩展（Manifest V3）。
-
-### 核心特性
-1. **即划即弹与全场景覆盖**：不仅支持首页主发帖框与长文章编辑器，更完整支持信息流中的**评论框（Comments）与多级嵌套回复框（Threaded Replies）**。划选文字即自动在选区上方悬浮工具栏。
-2. **五款常用样式**：提供衬线粗体、衬线斜体、粗斜体、无衬线粗体，以及 `Aa` 一键还原纯文本。
-3. **严格域名隔离**：仅在 `*.linkedin.com` 作用域内运行，绝不注入或监听其他任何网站，安装时无宽泛权限告警。
-4. **全端原生呈现**：基于国际 Unicode 数学字母编码，排版在移动端（iOS / Android）、网页端及邮件摘要中均可直接显示，阅读者无需安装插件。
-5. **底层编辑器状态同步**：针对评论框与回复框易碎的 Quill.js 实例，通过原生输入指令派发更新，确保格式化后“评论/回复”提交按钮立即可用，且保留完整的 `Cmd+Z` / `Ctrl+Z` 撤销重做历史。
-6. **零敏感权限与离线运算**：不申请存储与网络权限，不收集任何用户输入与浏览数据，全流程本地即时处理。
-7. **宽松开源协议**：采用 MIT 许可证开放源码。
-
-### 官方商店直达安装
-- **Microsoft Edge 官方扩展商店**：[立即安装 Formatly for LinkedIn](https://microsoftedge.microsoft.com/addons/detail/formatly-for-linkedin-bo/ondapfbkhgndgfmffikdkmkklofdomlo)（已正式上线，点击直接安装）
-- **Google Chrome Web Store**：审核进行中
+**Tianlu (Tyler) HUANG**  
+*Co-founder & COO @ Transfong | Tech Ventures Cross-Border*  
+- LinkedIn: [linkedin.com/in/tylerhuangsg](https://www.linkedin.com/in/tylerhuangsg/)  
+- GitHub: [@xemee82](https://github.com/xemee82)  
 
 ---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).  
-Copyright (c) 2026 Tianlu (Tyler) HUANG.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Disclaimer
+*Formatly is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.*

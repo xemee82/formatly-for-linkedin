@@ -3,7 +3,7 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const rootDir = path.resolve(__dirname, '..');
-const zipFileName = 'formatly-for-linkedin-v1.0.0.zip';
+const zipFileName = 'formatly-v1.1.0.zip';
 const zipPath = path.join(rootDir, zipFileName);
 
 // 先删除可能已存在的旧 zip

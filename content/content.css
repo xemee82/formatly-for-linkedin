@@ -1,10 +1,21 @@
-/* 宿主元素样式 — 所有工具栏样式都在 Shadow DOM 内部 */
+/**
+ * 宿主元素样式 — 所有工具栏样式都在 Shadow DOM 内部
+ *
+ * 安全约束：
+ *   宿主永远是 width:0 height:0 + overflow:visible 的零尺寸锚点，
+ *   pointer-events 永远为 none。
+ *   仅 Shadow DOM 内部的 .lif-toolbar.visible 拥有 pointer-events:auto。
+ *   这确保宿主元素不会拦截页面任何区域的点击（包括 Messaging 入口等覆盖层元素）。
+ */
 #lif-toolbar-host {
   position: fixed !important;
   z-index: 2147483647 !important;
-  pointer-events: none;
-}
-
-#lif-toolbar-host.lif-visible {
-  pointer-events: auto !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
 }

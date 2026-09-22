@@ -1,5 +1,7 @@
 /**
- * Content Script 主入口（简化直出版）
+ * Content Script 主入口
+ * 协调 SelectionDetector、FloatingToolbar 与 TextReplacer
+ * 支持 LinkedIn 与 X (Twitter) 双平台
  */
 (function () {
   'use strict';
@@ -7,13 +9,12 @@
   if (window.__lifInitialized) return;
   window.__lifInitialized = true;
 
-  console.log('[LIF] ★★★ LinkedIn Inline Formatter Content Script 已加载 ★★★');
+  console.log('[Formatly] Content Script loaded on', window.location.hostname);
 
   let currentSelectionInfo = null;
 
   // 1. 初始化浮动工具栏
   window.FloatingToolbar.init((styleName) => {
-    console.log('[LIF] 点击了格式化风格:', styleName);
     if (!currentSelectionInfo) return;
 
     const selection = currentSelectionInfo.selection || window.getSelection();
@@ -22,12 +23,11 @@
         selection.removeAllRanges();
         selection.addRange(currentSelectionInfo.range);
       } catch (e) {
-        console.warn('[LIF] 恢复选区失败:', e);
+        console.warn('[Formatly] 恢复选区失败:', e);
       }
     }
 
     const success = window.TextReplacer.applyFormat(styleName, currentSelectionInfo);
-    console.log('[LIF] 格式化替换结果:', success);
 
     if (success) {
       setTimeout(() => {
@@ -41,7 +41,6 @@
   window.SelectionDetector.init((info) => {
     if (info) {
       currentSelectionInfo = info;
-      console.log('[LIF] 收到有效选区，准备弹出工具栏:', info.text);
       window.FloatingToolbar.show(info.rect);
     } else {
       if (window.FloatingToolbar.isVisible()) {
@@ -56,5 +55,5 @@
     }
   });
 
-  console.log('[LIF] 全部模块初始化完毕 ✓');
+  console.log('[Formatly] All modules ready ✓');
 })();

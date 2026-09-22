@@ -1,9 +1,12 @@
 /**
  * 浮动格式化工具栏
  * 使用 open Shadow DOM 隔离样式
- * 采用纯 DOM API 构建（避免使用 innerHTML，彻底兼容 LinkedIn Trusted Types 安全策略）
- * 
- * 精简按钮：Bold / Italic / Bold Italic / Sans-Serif Bold / Revert
+ * 采用纯 DOM API 构建（避免使用 innerHTML，彻底兼容 Trusted Types 安全策略）
+ *
+ * 安全架构：
+ *   宿主 (#lif-toolbar-host) 是 width:0 height:0 pointer-events:none 的零尺寸锚点。
+ *   仅 Shadow DOM 内部的 .lif-toolbar.visible 拥有 pointer-events:auto。
+ *   这确保不会出现大面积透明遮罩拦截页面点击（Messaging、导航等）的问题。
  */
 window.FloatingToolbar = (function() {
   let hostElement = null;
@@ -18,12 +21,16 @@ window.FloatingToolbar = (function() {
     formatCallback = onFormatClick;
 
     // 创建宿主元素并附加 Shadow DOM
+    // 宿主本身是零尺寸锚点，内部工具栏通过 overflow:visible 溢出呈现
     hostElement = document.createElement('div');
     hostElement.id = 'lif-toolbar-host';
     hostElement.setAttribute('data-lif-toolbar', 'true');
     hostElement.style.position = 'fixed';
     hostElement.style.zIndex = '2147483647';
     hostElement.style.pointerEvents = 'none';
+    hostElement.style.width = '0';
+    hostElement.style.height = '0';
+    hostElement.style.overflow = 'visible';
     hostElement.style.left = '0px';
     hostElement.style.top = '0px';
     shadowRoot = hostElement.attachShadow({ mode: 'open' });
@@ -114,6 +121,7 @@ window.FloatingToolbar = (function() {
       const btn = document.createElement('button');
       btn.setAttribute('data-style', style);
       btn.setAttribute('title', title);
+      btn.setAttribute('type', 'button');
       btn.textContent = text;
       if (isBold) btn.style.fontWeight = 'bold';
       if (isItalic) btn.style.fontStyle = 'italic';
@@ -138,6 +146,7 @@ window.FloatingToolbar = (function() {
     // 阻止 mousedown 默认行为，防止编辑器失焦
     toolbarElement.addEventListener('mousedown', (e) => {
       e.preventDefault();
+      e.stopPropagation();
     });
 
     // 监听按钮点击事件
@@ -149,7 +158,7 @@ window.FloatingToolbar = (function() {
     });
 
     document.body.appendChild(hostElement);
-    console.log('[LIF] 浮动工具栏初始化完成 (Trusted Types 安全模式)');
+    console.log('[Formatly] 浮动工具栏初始化完成 (Trusted Types 安全模式)');
   }
 
   function show(rect) {
@@ -159,10 +168,8 @@ window.FloatingToolbar = (function() {
       document.body.appendChild(hostElement);
     }
 
-    hostElement.style.display = 'block';
-    hostElement.style.zIndex = '2147483647';
-    hostElement.classList.add('lif-visible');
-    hostElement.style.pointerEvents = 'auto';
+    // 注意：不在宿主上设置 pointer-events:auto（这正是 Messaging Bug 的根因）
+    // 仅在 Shadow DOM 内部的 .lif-toolbar 上通过 .visible 类启用 pointer-events
     toolbarElement.classList.add('visible');
     isToolbarVisible = true;
 
@@ -187,7 +194,6 @@ window.FloatingToolbar = (function() {
 
     hostElement.style.left = `${left}px`;
     hostElement.style.top = `${top}px`;
-    console.log('[LIF] 工具栏已显示在位置:', left, top);
   }
 
   function hide() {
@@ -195,13 +201,7 @@ window.FloatingToolbar = (function() {
     
     toolbarElement.classList.remove('visible');
     isToolbarVisible = false;
-    
-    setTimeout(() => {
-      if (!isToolbarVisible) {
-        hostElement.classList.remove('lif-visible');
-        hostElement.style.pointerEvents = 'none';
-      }
-    }, 150);
+    // 宿主始终保持 pointer-events:none，无需额外清理
   }
 
   function isVisible() {

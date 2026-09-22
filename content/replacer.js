@@ -2,8 +2,12 @@
  * 文本替换引擎 (Text Replacer)
  * 
  * 负责将选中的文本替换为 Unicode 格式化后的文本。
- * 优先使用 document.execCommand('insertText') 来确保 LinkedIn 编辑器
+ * 优先使用 document.execCommand('insertText') 来确保编辑器
  * 的内部状态（undo/redo 栈、字数统计等）保持同步。
+ * 
+ * 兼容平台：
+ *   LinkedIn — Quill 编辑器 contenteditable
+ *   X (Twitter) — React/Draft.js contenteditable + role="textbox"
  */
 (function () {
   'use strict';
@@ -43,20 +47,23 @@
             selection.addRange(selectionInfo.range);
           }
         } catch (e) {
-          console.warn('[LIF] 恢复选区失败:', e);
+          console.warn('[Formatly] 恢复选区失败:', e);
         }
       }
 
       // 优先使用 execCommand('insertText') 替换文本
-      const success = this._replaceWithExecCommand(convertedText);
+      let success = this._replaceWithExecCommand(convertedText);
       
       if (!success) {
         // Fallback：手动替换 Range 内容并触发 input 事件
         const targetRange = (selectionInfo && selectionInfo.range) || (selection && selection.rangeCount > 0 ? selection.getRangeAt(0) : null);
-        this._replaceWithRange(selection, targetRange, convertedText);
+        success = this._replaceWithRange(selection, targetRange, convertedText);
       }
 
-      return true;
+      // 通知编辑器框架状态更新（尤其对 X 的 React 状态机和字符计数器至关重要）
+      this._notifyEditorUpdate(selectionInfo);
+
+      return success;
     },
 
     /**
@@ -68,7 +75,7 @@
       try {
         return document.execCommand('insertText', false, text);
       } catch (e) {
-        console.warn('[LIF] execCommand 失败，使用 fallback:', e);
+        console.warn('[Formatly] execCommand 失败，使用 fallback:', e);
         return false;
       }
     },
@@ -78,7 +85,7 @@
      */
     _replaceWithRange(selection, range, text) {
       try {
-        if (!range) return;
+        if (!range) return false;
 
         // 删除选区内容
         range.deleteContents();
@@ -107,22 +114,46 @@
             data: text
           }));
         }
+        return true;
       } catch (e) {
-        console.error('[LIF] Range 替换失败:', e);
+        console.error('[Formatly] Range 替换失败:', e);
+        return false;
+      }
+    },
+
+    /**
+     * 针对 X (Twitter) 等 React 编辑器，补发状态变更事件以唤醒字符计数与发帖按钮激活
+     * 对 LinkedIn Quill 编辑器无副作用
+     */
+    _notifyEditorUpdate(selectionInfo) {
+      try {
+        let node = selectionInfo?.range?.startContainer || document.activeElement;
+        const editor = this._findEditorElement(node);
+        if (editor) {
+          editor.dispatchEvent(new Event('input', { bubbles: true }));
+          editor.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      } catch (e) {
+        // 静默捕获
       }
     },
 
     /**
      * 向上查找最近的可编辑元素 (支持 Shadow DOM host 穿透)
+     * 兼容 LinkedIn contenteditable 与 X role="textbox" / data-testid="tweetTextarea"
      * @param {Node} node - 起始节点
      * @returns {Element|null}
      */
     _findEditorElement(node) {
       let current = node;
       while (current && current !== document.documentElement) {
-        if (current.nodeType === Node.ELEMENT_NODE &&
-            (current.getAttribute?.('contenteditable') === 'true' || current.isContentEditable)) {
-          return current;
+        if (current.nodeType === Node.ELEMENT_NODE) {
+          if (current.isContentEditable ||
+              current.getAttribute?.('contenteditable') === 'true' ||
+              current.getAttribute?.('role') === 'textbox' ||
+              (current.getAttribute?.('data-testid') && current.getAttribute('data-testid').includes('tweetTextarea'))) {
+            return current;
+          }
         }
         current = current.parentElement || current.parentNode?.host;
       }
