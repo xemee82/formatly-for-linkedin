@@ -21,7 +21,50 @@
 
 ## 2. 详细描述 (Detailed Description)
 
-> 💡 **操作指南**：直接复制 STORE_LISTING.md 第 2 节中的纯文本框内容，粘贴至开发者后台 Description 文本框。
+> 💡 **操作指南**：直接复制以下虚线框内的纯文本内容，粘贴至 Chrome/Edge 开发者后台的 **Description** 文本框中（纯文本排版，已兼容商店纯文本换行格式，已包含必要的商标免责声明）：
+
+```text
+Formatly provides an inline formatting toolbar directly inside LinkedIn and X (Twitter) post composers, comment fields, threads, and reply boxes. It eliminates the need to switch browser tabs to copy-paste formatted text from external generator websites.
+
+Select any text within an editable field on LinkedIn or X (Twitter) to format it instantly with bold, italic, and Unicode typography.
+
+HIGHLIGHTS
+- No X Premium Required: Unlock bold, italic, and font styles across all X posts and replies without a paid subscription.
+- Universal Feed Visibility: Uses standard Unicode characters that display natively for all followers across web, iOS, Android, and embeds.
+- Works Across Both Platforms: Seamlessly format LinkedIn posts and comments, X tweets and threads, quote tweets, and reply dialogs.
+
+FEATURES
+- Instant Floating Toolbar: Appears directly over selected text within LinkedIn's or X's editor.
+- Universal Comment & Reply Support: Works seamlessly across posts, inline feed comments, threads, and deeply nested reply boxes without disabling submit buttons.
+- Five Core Styles:
+  * Serif Bold (Bold)
+  * Serif Italic (Italic)
+  * Serif Bold Italic (Bold Italic)
+  * Sans-Serif Bold (Bold)
+  * Plain Revert (Aa): Restores styled text to standard plain characters.
+- Universal Compatibility: Uses standard Unicode characters. Styled text renders consistently across iOS, Android, web browsers, and email notifications without requiring plugins for readers.
+- Editor Synchronization: Integrates with LinkedIn's Quill and X's React/Draft.js editor models via native input commands, keeping the submit button active and preserving Cmd+Z / Ctrl+Z undo history.
+- Strict Site Isolation: Configured strictly for *.linkedin.com, *.x.com, and *.twitter.com. The extension never runs on or inspects any other website.
+- Clean and Unobtrusive: No configuration panels or background processes. The toolbar only displays when text is selected.
+
+HOW TO USE
+1. Start writing a post, comment, thread, or reply on LinkedIn or X.
+2. Highlight the text you want to format.
+3. Click "B", "I", or any style on the floating toolbar.
+4. To revert, highlight the styled text and click "Aa", or press Cmd+Z / Ctrl+Z.
+
+PRIVACY & SECURITY
+- Zero sensitive permissions: Declares no host permissions, no storage access, and no background worker.
+- Site-isolated: Scoped exclusively to *.linkedin.com, *.x.com, and *.twitter.com.
+- Local execution: All transformations occur locally in your browser. No data is collected, logged, or transmitted.
+- Fully compliant with LinkedIn and X Content Security Policies.
+
+DISCLAIMER
+Formatly is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.
+
+Open source under the MIT License:
+https://github.com/xemee82/formatly-for-linkedin
+```
 
 ---
 
