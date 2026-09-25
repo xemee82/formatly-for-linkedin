@@ -312,7 +312,7 @@ const html1 = `<!DOCTYPE html>
       <div class="b-icon">🔄</div>
       <div class="b-text">
         <h5>Undo & Redo Synchronized</h5>
-        <p>Full Cmd+Z / Ctrl+Z support with LinkedIn's native editor</p>
+        <p>Full Cmd+Z / Ctrl+Z support across LinkedIn & X</p>
       </div>
     </div>
     <div class="b-card">
@@ -574,7 +574,7 @@ const html2 = `<!DOCTYPE html>
           <div class="style-key">B</div>
           <div class="style-label">Serif Bold</div>
         </div>
-        <div class="style-output">𝐇𝐞𝐥𝐥𝐨 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲</div>
+        <div class="style-output">𝐇𝐞𝐥𝐥𝐨 𝐋𝐢𝐧𝐤𝐞𝐝𝐈𝐧 & 𝐗</div>
       </div>
 
       <div class="style-row">
@@ -582,7 +582,7 @@ const html2 = `<!DOCTYPE html>
           <div class="style-key" style="font-style: italic;">I</div>
           <div class="style-label">Serif Italic</div>
         </div>
-        <div class="style-output">𝐻𝑒𝑙𝑙𝑜 𝐿𝑖𝑛𝑘𝑒𝑑𝐼𝑛 𝐶𝑜𝑚𝑚𝑢𝑛𝑖𝑡𝑦</div>
+        <div class="style-output">𝐻𝑒𝑙𝑙𝑜 𝐿𝑖𝑛𝑘𝑒𝑑𝐼𝑛 & 𝑋</div>
       </div>
 
       <div class="style-row">
@@ -590,7 +590,7 @@ const html2 = `<!DOCTYPE html>
           <div class="style-key" style="font-style: italic;">B</div>
           <div class="style-label">Serif Bold Italic</div>
         </div>
-        <div class="style-output">𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝒏𝒌𝒆𝒅𝑰𝒏 𝑪𝒐𝒎𝒎𝒖𝒏𝒊𝒕𝒚</div>
+        <div class="style-output">𝑯𝒆𝒍𝒍𝒐 𝑳𝒊𝒏𝒌𝒆𝒅𝑰𝒏 & 𝑿</div>
       </div>
 
       <div class="style-row">
@@ -598,7 +598,7 @@ const html2 = `<!DOCTYPE html>
           <div class="style-key">𝗕</div>
           <div class="style-label">Sans-Serif Bold</div>
         </div>
-        <div class="style-output">𝗛𝗲𝗹𝗹𝗼 𝗟𝗶𝗻𝗸𝗲𝗱𝗜𝗻 𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆</div>
+        <div class="style-output">𝗛𝗲𝗹𝗹𝗼 𝗟𝗶𝗻𝗸𝗲𝗱𝗜𝗻 & 𝗫</div>
       </div>
 
       <div class="style-row">
@@ -606,7 +606,7 @@ const html2 = `<!DOCTYPE html>
           <div class="style-key">Aa</div>
           <div class="style-label">One-Click Revert</div>
         </div>
-        <div class="style-output" style="color: #94A3B8;">Hello LinkedIn Community</div>
+        <div class="style-output" style="color: #94A3B8;">Hello LinkedIn & X</div>
       </div>
     </div>
 
@@ -622,7 +622,7 @@ const html2 = `<!DOCTYPE html>
           </div>
         </div>
         <div class="pop-hint">
-          Highlight any text in LinkedIn post composer to open toolbar.
+          Highlight text on LinkedIn or X (Twitter) to format instantly.
         </div>
         <div class="pop-creator">
           <div class="pop-c-label">Creator & Open Source</div>
@@ -756,6 +756,7 @@ runScreenshot(
   1280,
   800
 );
+fs.copyFileSync(path.join(assetsDir, 'screenshot-1-toolbar.png'), path.join(assetsDir, 'screenshot-1.png'));
 
 runScreenshot(
   path.join(tempDir, 'screen2.html'),
@@ -763,6 +764,7 @@ runScreenshot(
   1280,
   800
 );
+fs.copyFileSync(path.join(assetsDir, 'screenshot-2-styles.png'), path.join(assetsDir, 'screenshot-2.png'));
 
 runScreenshot(
   path.join(tempDir, 'promo.html'),
@@ -773,4 +775,16 @@ runScreenshot(
 
 // 清理临时 html
 fs.rmSync(tempDir, { recursive: true, force: true });
-console.log('✓ All visual assets generated successfully in store-assets/');
+
+// 自动同步最新图片至 iCloud 商店素材目录
+const icloudDir = '/Users/tylerh/Library/Mobile Documents/com~apple~CloudDocs/Formatly_Store_Assets';
+if (fs.existsSync(icloudDir)) {
+  fs.copyFileSync(path.join(assetsDir, 'screenshot-1.png'), path.join(icloudDir, 'screenshot-1.png'));
+  fs.copyFileSync(path.join(assetsDir, 'screenshot-1-toolbar.png'), path.join(icloudDir, 'screenshot-1-toolbar.png'));
+  fs.copyFileSync(path.join(assetsDir, 'screenshot-2.png'), path.join(icloudDir, 'screenshot-2.png'));
+  fs.copyFileSync(path.join(assetsDir, 'screenshot-2-styles.png'), path.join(icloudDir, 'screenshot-2-styles.png'));
+  fs.copyFileSync(path.join(assetsDir, 'promo-tile-440x280.png'), path.join(icloudDir, 'promo-tile-440x280.png'));
+  console.log('☁️ Synced all screenshots & promo tile to iCloud Store Assets directory.');
+}
+
+console.log('✓ All visual assets generated successfully in store-assets/ and synced to iCloud.');
