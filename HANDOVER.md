@@ -195,7 +195,7 @@ zip -r linkedin-text-formatter.zip . -x "*.git*" "*.DS_Store" "*__MACOSX*" "*.te
 ### 6.4 推送至 GitHub 开源仓库
 当您在 GitHub 创建好对应仓库后，直接在本地执行：
 ```bash
-git remote add origin https://github.com/<your-username>/formatly-for-linkedin.git
+git remote add origin https://github.com/<your-username>/inline-text-formatter.git
 git push -u origin main
 ```
 
