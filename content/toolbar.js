@@ -158,7 +158,7 @@ window.FloatingToolbar = (function() {
     });
 
     document.body.appendChild(hostElement);
-    console.log('[Formatly] 浮动工具栏初始化完成 (Trusted Types 安全模式)');
+    console.log('[InlineFormatter] 浮动工具栏初始化完成 (Trusted Types 安全模式)');
   }
 
   function show(rect) {

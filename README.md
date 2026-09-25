@@ -1,4 +1,4 @@
-# Formatly for LinkedIn & X: Bold, Italic & Font Styles
+# Inline Text Formatter for LinkedIn & X: Bold, Italic & Font Styles
 
 > **Format LinkedIn and X (Twitter) posts, comments, threads & replies with bold, italic, and stylish fonts instantly.**  
 > Free, privacy-first Chrome & Edge browser extension. No X Premium subscription required.
@@ -9,7 +9,7 @@
 
 ## Features
 
-- **Instant Floating Toolbar**: Highlight any text inside LinkedIn or X to format it instantly. No tab switching, no copy-pasting from generator websites.
+- **Instant Inline Floating Toolbar**: Highlight any text inside LinkedIn or X to format it instantly. No tab switching, no copy-pasting from generator websites, no intrusive modal popups.
 - **Full X (Twitter) Support**: Format tweets, threads, quote tweets, and reply boxes without paying for X Premium.
 - **LinkedIn Comment & Reply Support**: Works seamlessly across posts, inline feed comments, and deeply nested reply threads without disabling submit buttons.
 - **Universal Unicode Output**: Built using standard Unicode Mathematical Alphanumeric Symbols. Renders natively for all followers across web, iOS, iPadOS, Android, and external embeds.
@@ -41,7 +41,7 @@
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/xemee82/formatly-for-linkedin.git
+   git clone https://github.com/xemee82/inline-text-formatter.git
    ```
 2. Open `chrome://extensions/` (Chrome) or `edge://extensions/` (Edge).
 3. Enable **Developer mode**.
@@ -52,7 +52,7 @@
 
 ## Architecture
 
-- **Pure Vanilla ES6+**: Zero build tools, zero bundlers, zero npm dependencies.
+- **Pure Vanilla ES6+**: Zero build tools, zero bundlers, zero npm dependencies (~35KB total payload).
 - **Shadow DOM Isolation**: The floating toolbar is rendered inside an open Shadow DOM root, preventing CSS conflicts with host site design systems.
 - **Trusted Types & CSP Compliant**: Constructed 100% via native DOM APIs (`createElement`, `textContent`, `setAttribute`). Completely avoids `innerHTML`.
 - **Zero-Size Anchor Host**: The toolbar host element uses `width: 0; height: 0; overflow: visible` to ensure it never blocks clicks on underlying page elements (including Messaging panels, navigation overlays, etc.).
@@ -79,4 +79,4 @@ See [CHANGELOG.md](CHANGELOG.md) for the full release history.
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ### Disclaimer
-*Formatly is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.*
+*InlineFormatter is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.*

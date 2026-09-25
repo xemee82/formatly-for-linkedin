@@ -9,12 +9,12 @@
 ### 扩展名称 (Extension Name)
 > ⚠️ **合规警示 (Trademark Policy)**：根据 Google 与微软的商标政策，**切勿直接使用 "LinkedIn Text Formatter" 或 "X Text Formatter" 作为应用主标题**，否则会被审核机器人直接判定为 "Impersonation (冒充官方应用)" 并秒拒或下架。合规格式必须采用 `<产品名> for <平台>: <功能描述>`。
 
-- **推荐名称 (Recommended)**: `Formatly for LinkedIn & X: Bold, Italic & Font Styles` (54 字符)
+- **推荐名称 (Recommended)**: `Inline Text Formatter for LinkedIn & X: Bold, Italic & Font Styles` (68 字符)
 
 ### 简短描述 (Short Description)
 > 最大限制 132 个字符。展示在搜索列表和推荐卡片中，务必简练且直击痛点。
 
-`Format LinkedIn & X (Twitter) posts, comments, threads & replies with bold, italic & stylish fonts. Select text to format instantly.` (132 字符)
+`Inline text formatter for LinkedIn & X. Format posts, comments, threads & replies with bold, italic & stylish fonts instantly.` (126 字符)
 
 ### 类别 (Category)
 - **Chrome Web Store**: `Productivity` (生产力) 或 `Social & Communication` (社交与通讯)
@@ -35,13 +35,14 @@
 > 💡 **复制以下内容直接粘贴至开发者后台的 Description 输入框**（商店后台不支持 Markdown 语法，已排版为标准换行符与 ASCII 符号）：
 
 ```text
-Formatly provides an inline formatting toolbar directly inside LinkedIn and X (Twitter) post composers, comment fields, threads, and reply boxes. It eliminates the need to switch browser tabs to copy-paste formatted text from external generator websites.
+Inline Text Formatter provides an instant floating formatting toolbar directly inside LinkedIn and X (Twitter) post composers, comment fields, threads, and reply boxes. It eliminates the need to switch browser tabs to copy-paste formatted text from external generator websites or clumsy modal popups.
 
 Select any text within an editable field on LinkedIn or X (Twitter) to format it instantly with bold, italic, and Unicode typography.
 
-WHAT'S NEW IN v1.1.0
-- Full X (Twitter) Support: Format tweets, threads, quote tweets, and replies with bold, italic, and stylish fonts. No X Premium subscription required.
-- Fixed Messaging Issue: Resolved a bug where the toolbar overlay could intermittently block clicks on LinkedIn's Messaging panel and navigation.
+WHAT'S NEW IN v1.2.0
+- Rebranded to Inline Text Formatter: Highlights our pure inline, floating toolbar experience without annoying modal popups.
+- Full X (Twitter) Support: Format tweets, threads, quote tweets, and replies with bold, italic, and stylish fonts. No X Premium required.
+- Fixed Messaging Issue: Resolved an issue where the toolbar host element could intermittently block clicks on LinkedIn's Messaging panel.
 - Zero-Size Anchor Architecture: Redesigned the toolbar host element to eliminate pointer-event conflicts across all underlying page elements.
 
 HIGHLIGHTS
@@ -76,10 +77,10 @@ PRIVACY & SECURITY
 - Fully compliant with LinkedIn and X Content Security Policies.
 
 DISCLAIMER
-Formatly is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.
+Inline Text Formatter is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.
 
 Open source under the MIT License:
-https://github.com/xemee82/formatly-for-linkedin
+https://github.com/xemee82/inline-text-formatter
 ```
 
 ---
@@ -92,9 +93,7 @@ https://github.com/xemee82/formatly-for-linkedin
 - **Permissions**: `None` (无任何额外权限)
 - **Host Permissions**: `None` (无额外外置主机权限)
 - **Content Scripts 声明理由**:
-  - `https://*.linkedin.com/*`
-  - `https://*.x.com/*`
-  - `https://*.twitter.com/*`
+  - `https://*.linkedin.com/*`, `https://*.x.com/*`, `https://*.twitter.com/*`
   > "The content script runs strictly on LinkedIn and X (Twitter) web pages to detect user text selection inside post and tweet editors and display the floating formatting toolbar. It operates entirely locally and does not read, store, or transmit any user data."
 
 ### 个人数据收集申明 (Data Collection Form)
@@ -125,7 +124,7 @@ https://github.com/xemee82/formatly-for-linkedin
 
 ## 5. 打包发布文件 (Release Package)
 
-- **ZIP 包路径**: `formatly-v1.1.0.zip`
+- **ZIP 包路径**: `inline-text-formatter-v1.2.0.zip`
 - **校验状态**: 
   - 100% 满足 Manifest V3 规范
   - 根目录直置 `manifest.json`（无多余层级包装）

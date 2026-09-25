@@ -261,10 +261,10 @@ const marqueeHtml = `<!DOCTYPE html>
   <!-- Left: Value Proposition -->
   <div class="left-col">
     <div class="brand-row">
-      <img src="${iconDataUrl}" class="brand-icon" alt="Formatly Icon">
+      <img src="${iconDataUrl}" class="brand-icon" alt="InlineFormatter Icon">
       <div class="brand-text-block">
-        <h1 class="brand-name">Formatly for Linked<span class="in-accent">In</span></h1>
-        <div class="brand-badge">Inline Typography Extension</div>
+        <h1 class="brand-name">Inline<span class="in-accent">Formatter</span></h1>
+        <div class="brand-badge">For LinkedIn & X</div>
       </div>
     </div>
 
@@ -273,13 +273,13 @@ const marqueeHtml = `<!DOCTYPE html>
     </div>
 
     <div class="desc">
-      Stop switching tabs to copy-paste. Select any text inside LinkedIn to format with native Unicode typography and seamless undo history.
+      Stop switching tabs to copy-paste. Select any text inside LinkedIn & X to format with native Unicode typography and seamless undo history.
     </div>
 
     <div class="pills-grid">
       <div class="pill-item">
         <div class="pill-dot"></div>
-        <span>Strictly Scoped: *.linkedin.com</span>
+        <span>Strictly Scoped: LinkedIn & X</span>
       </div>
       <div class="pill-item">
         <div class="pill-dot"></div>

@@ -9,7 +9,7 @@
   if (window.__lifInitialized) return;
   window.__lifInitialized = true;
 
-  console.log('[Formatly] Content Script loaded on', window.location.hostname);
+  console.log('[InlineFormatter] Content Script loaded on', window.location.hostname);
 
   let currentSelectionInfo = null;
 
@@ -23,7 +23,7 @@
         selection.removeAllRanges();
         selection.addRange(currentSelectionInfo.range);
       } catch (e) {
-        console.warn('[Formatly] 恢复选区失败:', e);
+        console.warn('[InlineFormatter] 恢复选区失败:', e);
       }
     }
 
@@ -55,5 +55,5 @@
     }
   });
 
-  console.log('[Formatly] All modules ready ✓');
+  console.log('[InlineFormatter] All modules ready ✓');
 })();

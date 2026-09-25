@@ -3,8 +3,10 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 const rootDir = path.resolve(__dirname, '..');
-const zipFileName = 'formatly-v1.1.0.zip';
+const zipFileName = 'inline-text-formatter-v1.2.0.zip';
 const zipPath = path.join(rootDir, zipFileName);
+const icloudDir = '/Users/tylerh/Library/Mobile Documents/com~apple~CloudDocs/Formatly_Store_Assets';
+const icloudRepoDir = '/Users/tylerh/Library/Mobile Documents/com~apple~CloudDocs/linkedin-text-formatter';
 
 // 先删除可能已存在的旧 zip
 if (fs.existsSync(zipPath)) {
@@ -55,6 +57,16 @@ execSync(cmd, { stdio: 'inherit' });
 
 // 清理 staging 目录
 fs.rmSync(stagingDir, { recursive: true, force: true });
+
+// 同步备份至 iCloud 目录
+if (fs.existsSync(icloudDir)) {
+  fs.copyFileSync(zipPath, path.join(icloudDir, zipFileName));
+  console.log(`☁️ Synced to iCloud: ${path.join(icloudDir, zipFileName)}`);
+}
+if (fs.existsSync(icloudRepoDir)) {
+  fs.copyFileSync(zipPath, path.join(icloudRepoDir, zipFileName));
+  console.log(`☁️ Synced to iCloud Repo: ${path.join(icloudRepoDir, zipFileName)}`);
+}
 
 // 闭环自检：列出 zip 包内容
 console.log('\n==========================================');

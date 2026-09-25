@@ -1,6 +1,14 @@
 # Changelog
 
-All notable changes to Formatly are documented in this file.
+All notable changes to Inline Text Formatter are documented in this file.
+
+## [1.2.0] - 2026-09-25
+
+### Rebrand & Differentiation
+- **Official New Name**: Rebranded from "Formatly" to **Inline Text Formatter for LinkedIn & X: Bold, Italic & Font Styles** (Short brand: **InlineFormatter**).
+- **Brand Differentiation**: Eliminates brand confusion with third-party modal form generators. Highlights our distinct Notion/Medium-style inline floating toolbar interaction.
+- **SEO & Search Dominance**: Aligns store listing title with top intent keywords: `Inline`, `Text Formatter`, `LinkedIn & X`, `Bold, Italic & Font Styles`.
+- **UI & Code Polish**: Updated popup branding to `InlineFormatter`, unified internal logging to `[InlineFormatter]`, updated repo links to `inline-text-formatter`.
 
 ## [1.1.0] - 2026-09-22
 
@@ -15,9 +23,8 @@ All notable changes to Formatly are documented in this file.
 - **Fix**: The host element is now constrained to `width: 0; height: 0; overflow: visible` and permanently set to `pointer-events: none`. Only the Shadow DOM inner toolbar (`.lif-toolbar.visible`) receives `pointer-events: auto`. This ensures zero interference with any underlying page element regardless of z-index stacking.
 
 ### Changed
-- Extension name updated from "Formatly for LinkedIn" to "Formatly for LinkedIn & X" to reflect dual-platform support.
-- Popup UI now shows separate status badges for LinkedIn and X (Twitter).
-- All console log prefixes unified to `[Formatly]`.
+- Extension name updated to reflect dual-platform support.
+- Popup UI shows separate status badges for LinkedIn and X (Twitter).
 - Store listing descriptions, screenshots, and promotional tiles updated for dual-platform branding.
 
 ## [1.0.0] - 2026-09-20

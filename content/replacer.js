@@ -47,7 +47,7 @@
             selection.addRange(selectionInfo.range);
           }
         } catch (e) {
-          console.warn('[Formatly] 恢复选区失败:', e);
+          console.warn('[InlineFormatter] 恢复选区失败:', e);
         }
       }
 
@@ -75,7 +75,7 @@
       try {
         return document.execCommand('insertText', false, text);
       } catch (e) {
-        console.warn('[Formatly] execCommand 失败，使用 fallback:', e);
+        console.warn('[InlineFormatter] execCommand 失败，使用 fallback:', e);
         return false;
       }
     },
@@ -116,7 +116,7 @@
         }
         return true;
       } catch (e) {
-        console.error('[Formatly] Range 替换失败:', e);
+        console.error('[InlineFormatter] Range 替换失败:', e);
         return false;
       }
     },

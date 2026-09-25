@@ -247,8 +247,8 @@ const html1 = `<!DOCTYPE html>
     <div class="brand-group">
       <img src="${iconDataUrl}" class="brand-logo" alt="Logo">
       <div>
-        <div class="brand-title">Formatly for LinkedIn</div>
-        <div class="brand-subtitle">Instant Inline Text Formatting Without Leaving Your Post</div>
+        <div class="brand-title">InlineFormatter</div>
+        <div class="brand-subtitle">Inline Text Formatter for LinkedIn & X</div>
       </div>
     </div>
     <div class="feature-tags">
@@ -617,8 +617,8 @@ const html2 = `<!DOCTYPE html>
             <img src="${iconDataUrl}" style="width: 24px; height: 24px;" alt="icon">
           </div>
           <div class="pop-title">
-            <h3>Formatly for LinkedIn</h3>
-            <div class="pop-status">● Active on LinkedIn</div>
+            <h3>InlineFormatter</h3>
+            <div class="pop-status">● Active on LinkedIn & X</div>
           </div>
         </div>
         <div class="pop-hint">
@@ -723,8 +723,8 @@ const html3 = `<!DOCTYPE html>
 <body>
   <div class="accent-glow"></div>
   <img src="${iconDataUrl}" class="promo-logo" alt="Logo">
-  <h1>Formatly for LinkedIn</h1>
-  <p>Bold, Italic & Unicode Styles for Posts & Comments. 100% Free & Zero Permissions.</p>
+  <h1>InlineFormatter</h1>
+  <p>Inline Text Formatter for LinkedIn & X. 100% Free & Zero Permissions.</p>
   <div class="promo-tags">
     <span class="p-tag">𝐁𝐨𝐥𝐝</span>
     <span class="p-tag">𝐼𝑡𝑎𝑙𝑖𝑐</span>

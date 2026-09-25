@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Formatly for LinkedIn & X: Bold, Italic & Font Styles",
-  "version": "1.1.0",
-  "description": "Format LinkedIn & X (Twitter) posts, comments, threads & replies with bold, italic & stylish fonts. Select text to format instantly.",
+  "name": "Inline Text Formatter for LinkedIn & X: Bold, Italic & Font Styles",
+  "version": "1.2.0",
+  "description": "Inline text formatter for LinkedIn & X (Twitter). Format posts, comments, threads & replies with bold, italic & stylish fonts instantly.",
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
@@ -10,6 +10,7 @@
     "128": "icons/icon-128.png"
   },
   "action": {
+    "default_title": "Inline Text Formatter",
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "icons/icon-16.png",

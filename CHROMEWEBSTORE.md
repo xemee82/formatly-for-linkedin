@@ -1,9 +1,9 @@
 # Chrome Web Store & Edge Add-ons 开发者后台提交完整指南
 
-> **版本**：v1.1.0  
-> **最后更新**：2026-09-22  
+> **版本**：v1.2.0  
+> **最后更新**：2026-09-25  
 > **适用平台**：Google Chrome Web Store Developer Dashboard / Microsoft Edge Partner Center  
-> **项目名称**：Formatly for LinkedIn & X: Bold, Italic & Font Styles  
+> **项目名称**：Inline Text Formatter for LinkedIn & X: Bold, Italic & Font Styles  
 
 ---
 
@@ -11,8 +11,8 @@
 
 | 字段 (Field) | 提交内容 (Value) | 说明 / 约束 |
 | :--- | :--- | :--- |
-| **Extension Name**<br>(扩展名称) | `Formatly for LinkedIn & X: Bold, Italic & Font Styles` | 严格遵守平台商标命名政策（54 字符，符合 ≤75 字符上限） |
-| **Summary / Short Description**<br>(简短描述) | `Format LinkedIn & X (Twitter) posts, comments, threads & replies with bold, italic & stylish fonts. Select text to format instantly.` | 132 字符（正好满足 ≤132 字符上限） |
+| **Extension Name**<br>(扩展名称) | `Inline Text Formatter for LinkedIn & X: Bold, Italic & Font Styles` | 严格遵守平台商标命名政策，精准植入 Inline / Text Formatter / LinkedIn & X（68 字符，符合 ≤75 字符上限） |
+| **Summary / Short Description**<br>(简短描述) | `Inline text formatter for LinkedIn & X. Format posts, comments, threads & replies with bold, italic & stylish fonts instantly.` | 126 字符（严格满足 ≤132 字符上限） |
 | **Category**<br>(类别) | `Productivity` (生产力) 或 `Social & Communication` (社交与通讯) | 优先选择 Productivity |
 | **Primary Language**<br>(主语言) | `English (United States)` | 商店后台支持后续添加其他语言本地化 |
 | **Single Purpose Statement**<br>(单一用途声明) | `Provides an inline floating formatting toolbar to convert selected text into bold, italic, and stylish Unicode fonts directly within LinkedIn and X (Twitter) editors.` | 审核团队必读，一句话精确阐明核心功能 |
@@ -24,13 +24,14 @@
 > 💡 **操作指南**：直接复制以下虚线框内的纯文本内容，粘贴至 Chrome/Edge 开发者后台的 **Description** 文本框中（纯文本排版，已兼容商店纯文本换行格式，已包含必要的商标免责声明）：
 
 ```text
-Formatly provides an inline formatting toolbar directly inside LinkedIn and X (Twitter) post composers, comment fields, threads, and reply boxes. It eliminates the need to switch browser tabs to copy-paste formatted text from external generator websites.
+Inline Text Formatter provides an instant floating formatting toolbar directly inside LinkedIn and X (Twitter) post composers, comment fields, threads, and reply boxes. It eliminates the need to switch browser tabs to copy-paste formatted text from external generator websites or clumsy modal popups.
 
 Select any text within an editable field on LinkedIn or X (Twitter) to format it instantly with bold, italic, and Unicode typography.
 
-WHAT'S NEW IN v1.1.0
-- Full X (Twitter) Support: Format tweets, threads, quote tweets, and replies with bold, italic, and stylish fonts. No X Premium subscription required.
-- Fixed Messaging Issue: Resolved a bug where the toolbar overlay could intermittently block clicks on LinkedIn's Messaging panel and navigation.
+WHAT'S NEW IN v1.2.0
+- Rebranded to Inline Text Formatter: Highlights our pure inline, floating toolbar experience without annoying modal popups.
+- Full X (Twitter) Support: Format tweets, threads, quote tweets, and replies with bold, italic, and stylish fonts. No X Premium required.
+- Fixed Messaging Issue: Resolved an issue where the toolbar host element could intermittently block clicks on LinkedIn's Messaging panel.
 - Zero-Size Anchor Architecture: Redesigned the toolbar host element to eliminate pointer-event conflicts across all underlying page elements.
 
 HIGHLIGHTS
@@ -65,10 +66,10 @@ PRIVACY & SECURITY
 - Fully compliant with LinkedIn and X Content Security Policies.
 
 DISCLAIMER
-Formatly is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.
+Inline Text Formatter is an independent open-source project and is not affiliated with, sponsored by, or endorsed by LinkedIn Corporation or X Corp. LinkedIn is a registered trademark of LinkedIn Corporation. X and Twitter are registered trademarks of X Corp.
 
 Open source under the MIT License:
-https://github.com/xemee82/formatly-for-linkedin
+https://github.com/xemee82/inline-text-formatter
 ```
 
 ---
@@ -96,7 +97,7 @@ https://github.com/xemee82/formatly-for-linkedin
 所有素材均已保存在 iCloud 目录：  
 `/Users/tylerh/Library/Mobile Documents/com~apple~CloudDocs/Formatly_Store_Assets/`
 
-- **ZIP 上传包**: `formatly-v1.1.0.zip`
+- **ZIP 上传包**: `inline-text-formatter-v1.2.0.zip`
 - **应用图标**: `icons/icon-128.png` (128×128)
 - **截图 1**: `screenshot-1-toolbar.png` (1280×800)
 - **截图 2**: `screenshot-2-styles.png` (1280×800)
@@ -105,14 +106,14 @@ https://github.com/xemee82/formatly-for-linkedin
 
 ---
 
-## 5. v1.1.0 更新提交说明
+## 5. v1.2.0 更新提交说明 (Notes for Certification / Changelog)
 
 在更新现有 Edge 商店上架或重新提交 Chrome 审核时，在 **"What's new in this version"** 或 **Changelog** 字段填入：
 
 ```text
-v1.1.0 Changelog:
-- NEW: Full X (Twitter) support — format tweets, threads, and replies with bold, italic & font styles. No X Premium required.
+v1.2.0 Changelog:
+- BRANDING: Renamed to "Inline Text Formatter" to highlight our seamless inline floating toolbar workflow.
+- NEW: Added full support for X (Twitter) posts, threads, quote tweets, and replies with bold, italic & font styles.
 - FIXED: Resolved an issue where the toolbar host element could intermittently block clicks on LinkedIn's Messaging panel and navigation overlays.
-- IMPROVED: Toolbar host element now uses zero-size anchor architecture to eliminate all pointer-event conflicts with underlying page elements.
-- EXPANDED: Site scope now includes *.x.com and *.twitter.com alongside *.linkedin.com.
+- IMPROVED: Implemented zero-size anchor host architecture to eliminate all pointer-event conflicts with underlying page elements.
 ```

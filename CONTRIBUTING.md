@@ -1,6 +1,6 @@
-# Contributing to Formatly for LinkedIn
+# Contributing to Inline Text Formatter
 
-Thank you for your interest in contributing to **Formatly for LinkedIn**! We welcome bug reports, feature suggestions, code contributions, and new typography styles.
+Thank you for your interest in contributing to **Inline Text Formatter for LinkedIn & X**! We welcome bug reports, feature suggestions, code contributions, and new typography styles.
 
 ---
 
@@ -8,8 +8,8 @@ Thank you for your interest in contributing to **Formatly for LinkedIn**! We wel
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/xemee82/formatly-for-linkedin.git
-   cd formatly-for-linkedin
+   git clone https://github.com/xemee82/inline-text-formatter.git
+   cd inline-text-formatter
    ```
 
 2. **Load into Chrome / Edge**:

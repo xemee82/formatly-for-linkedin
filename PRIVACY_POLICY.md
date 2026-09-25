@@ -1,13 +1,13 @@
-# Privacy Policy for Formatly for LinkedIn
+# Privacy Policy for Inline Text Formatter for LinkedIn & X
 
-**Last updated: September 20, 2026**
+**Last updated: September 25, 2026**
 
-Formatly for LinkedIn ("we", "our", or "the extension") is committed to protecting your privacy. This Privacy Policy explains our practices regarding user data.
+Inline Text Formatter ("we", "our", or "the extension") is committed to protecting your privacy. This Privacy Policy explains our practices regarding user data.
 
 ---
 
 ## 1. Zero Data Collection
-Formatly for LinkedIn does **NOT** collect, store, track, or share any personal information, browsing history, or user-generated content.
+Inline Text Formatter does **NOT** collect, store, track, or share any personal information, browsing history, or user-generated content.
 - We do **not** record what you type or select.
 - We do **not** use cookies, analytics, or third-party tracking scripts.
 - We do **not** maintain any external servers or databases.
@@ -24,7 +24,8 @@ All text formatting operations (converting standard text to Unicode bold, italic
 
 ## 3. Permissions Used
 The extension runs with minimal permissions required for operation:
-- **Content Scripts (`https://*.linkedin.com/*`)**: Used solely to detect when you highlight text inside LinkedIn's post and comment editors, and to display the floating formatting toolbar directly on the page.
+- **Content Scripts (`https://*.linkedin.com/*`, `https://*.x.com/*`, `https://*.twitter.com/*`)**: Used solely to detect when you highlight text inside LinkedIn and X post, comment, thread, and reply editors, and to display the floating formatting toolbar directly on the page.
+- **Zero Sensitive Permissions**: No host permissions, no storage, no background worker.
 
 ---
 
